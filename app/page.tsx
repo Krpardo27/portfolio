@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { Hero } from "@/src/features/home/Hero";
 
 export default function HomePage() {
-  redirect("/home");
+  return <Hero />;
 }
