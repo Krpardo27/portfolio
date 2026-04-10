@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <>
       <Header />
-      <main className="flex-1 p-5 min-h-screen lg:h-screen">
+      <main className="flex-1 p-5 min-h-screen">
         {children}
       </main>
       <Footer />
