@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { experienceData } from "../../features/experience/data";
-import { ExperienceTimeline } from "../../features/experience/components/ExperienceTimeline";
+import { experienceData } from "../../../src/features/experience/data";
+import { ExperienceTimeline } from "../../../src/features/experience/components/ExperienceTimeline";
 console.log(experienceData);
 
 export default function ExperiencePage() {

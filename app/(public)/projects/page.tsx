@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getProjects } from "../../features/projects/data";
+import { getProjects } from "../../../src/features/projects/data";
 import Image from "next/image";
 
 export default async function ProjectsPage() {

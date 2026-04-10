@@ -1,4 +1,4 @@
-import { EducationTimeline } from "../../features/about/components/EducationTimeline";
+import { EducationTimeline } from "../../../src/features/about/components/EducationTimeline";
 
 export default function AboutPage() {
   return (

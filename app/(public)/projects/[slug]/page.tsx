@@ -1,4 +1,4 @@
-import { getProjectBySlug } from "@/src/app/features/projects/data";
+import { getProjectBySlug } from "@/src/features/projects/data";
 import { notFound } from "next/navigation";
 
 export default async function ProjectPage({
