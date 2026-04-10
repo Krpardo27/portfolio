@@ -21,7 +21,6 @@ export default function HomePage() {
           className="flex flex-col gap-6 text-center md:text-left"
         >
 
-          {/* Badge */}
           <motion.span
             variants={{
               hidden: { opacity: 0, y: 20 },
@@ -32,7 +31,6 @@ export default function HomePage() {
             Disponible para proyectos freelance
           </motion.span>
 
-          {/* Title */}
           <motion.h1
             variants={{
               hidden: { opacity: 0, y: 30 },
@@ -46,7 +44,6 @@ export default function HomePage() {
             </span>
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.h2
             variants={{
               hidden: { opacity: 0, y: 30 },
@@ -57,7 +54,6 @@ export default function HomePage() {
             Frontend Developer especializado en React & Next.js
           </motion.h2>
 
-          {/* Description */}
           <motion.p
             variants={{
               hidden: { opacity: 0, y: 30 },
@@ -69,7 +65,6 @@ export default function HomePage() {
             performance, UX y buenas prácticas de desarrollo.
           </motion.p>
 
-          {/* Buttons */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 30 },
