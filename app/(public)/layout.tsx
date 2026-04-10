@@ -1,17 +1,3 @@
-import { Metadata } from "next";
-import '../globals.css'
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-});
-
-export const metadata: Metadata = {
-  title: "Portfolio - Kevin Pardo Veas",
-  description: "Bienvenido a mi portfolio, donde podrás descubrir mis proyectos, habilidades y experiencia en el desarrollo web. Soy un apasionado desarrollador con un enfoque en la creación de soluciones innovadoras y eficientes. Explora mi trabajo y no dudes en contactarme para colaborar en futuros proyectos.",
-};
-
 import { Footer } from "@/src/shared/components/layout/Footer";
 import { Header } from "@/src/shared/components/layout/Header";
 
@@ -23,7 +9,7 @@ export default function RootLayout({
   return (
     <>
       <Header />
-      <main className={`flex-1 p-5 min-h-screen ${montserrat.className}`}>
+      <main className="flex-1 p-5 min-h-screen">
         {children}
       </main>
       <Footer />
