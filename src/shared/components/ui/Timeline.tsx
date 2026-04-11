@@ -25,7 +25,6 @@ export function Timeline({ title, description, data }: Props) {
   return (
     <section className="section-container">
       <div className="max-w-5xl mx-auto">
-
         {/* HEADER */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
@@ -34,20 +33,17 @@ export function Timeline({ title, description, data }: Props) {
 
           <div className="w-20 h-1 bg-blue-500 mx-auto mt-6 mb-8 rounded-full" />
 
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            {description}
-          </p>
+          <p className="text-slate-400 max-w-2xl mx-auto">{description}</p>
         </div>
 
         {/* TIMELINE */}
         <div className="relative">
-
-          {/* 🔥 Línea animada */}
+          {/* Línea animada */}
           <motion.div
             initial={{ height: 0 }}
             whileInView={{ height: "100%" }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="absolute left-4 md:left-1/2 w-[2px] bg-white/10 -translate-x-1/2 origin-top"
+            className="absolute left-1/2 w-[2px] bg-white/10 -translate-x-1/2 origin-top"
           />
 
           {data.map((item, index) => (
@@ -57,17 +53,17 @@ export function Timeline({ title, description, data }: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.5,
-                delay: index * 0.15, // 🔥 stagger
+                delay: index * 0.15, // stagger
               }}
               viewport={{ once: true, margin: "-100px" }}
-              className={`mb-16 flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
+              className={`mb-16 flex flex-col relative md:flex-row ${
+                index % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
             >
-
               {/* CARD */}
               <div
                 className={`
-                  group p-6 rounded-2xl 
+                  group lg:p-6 p-2 rounded-2xl 
                   border border-white/10 
                   bg-white/5 backdrop-blur
                   transition-all duration-300
@@ -98,9 +94,7 @@ export function Timeline({ title, description, data }: Props) {
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-slate-400">
-                      {item.subtitle}
-                    </p>
+                    <p className="text-sm text-slate-400">{item.subtitle}</p>
 
                     {item.location && (
                       <div className="flex items-center gap-2 text-xs text-slate-500 mt-1">
@@ -148,12 +142,19 @@ export function Timeline({ title, description, data }: Props) {
                 </div>
               </div>
 
-              {/* MOBILE */}
-              <div className="md:hidden flex items-center gap-2 text-slate-400 mb-3 ml-4">
+              <div
+                className="
+  md:hidden absolute -top-10 left-4 z-10
+  flex items-center gap-2
+  px-3 py-1 rounded-full
+  bg-[var(--color-background)] border border-white/10
+  backdrop-blur
+  text-xs text-slate-300
+"
+              >
                 <FiCalendar className="text-blue-400" />
-                <span className="text-sm">{item.period}</span>
+                <span>{item.period}</span>
               </div>
-
             </motion.div>
           ))}
         </div>
