@@ -37,7 +37,6 @@ export function Hero() {
             }}
             className="text-4xl md:text-6xl font-bold leading-tight tracking-tight"
           >
-            Hola, soy{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
               Kevin Pardo
             </span>
@@ -107,7 +106,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.9, y: 40 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex justify-center relative"
+          className="justify-center relative hidden md:flex"
         >
           {/* Glow */}
           <div className="absolute w-52 h-52 md:w-[420px] md:h-[420px] bg-blue-500/20 blur-3xl rounded-full" />
@@ -121,7 +120,6 @@ export function Hero() {
               md:w-[320px] md:h-[320px]
               lg:w-[380px] lg:h-[380px]
               xl:w-[440px] xl:h-[440px]
-
               rounded-3xl overflow-hidden 
               border border-white/10 
               bg-slate-900
@@ -135,7 +133,6 @@ export function Hero() {
               alt="Kevin Pardo"
               fill
               className="object-cover"
-              priority
             />
           </div>
         </motion.div>
