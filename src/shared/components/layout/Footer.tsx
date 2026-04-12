@@ -2,7 +2,7 @@ import { SocialLinks } from "../ui/SocialLinks";
 
 export function Footer() {
   return (
-    <footer className=" text-white px-4 py-8 lg:py-12 mb-20 lg:mb-0">
+    <footer className=" text-white px-4 py-8 lg:py-12">
       <div className="max-w-6xl mx-auto">
         <div className="border-t border-gray-800 mb-6" />
 
