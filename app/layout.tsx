@@ -2,6 +2,7 @@ import { Header } from "@/src/shared/components/layout/Header";
 import "./globals.css";
 import { Footer } from "@/src/shared/components/layout/Footer";
 import { NavMobile } from "@/src/shared/components/layout/NavMobile";
+import ToastNotification from "@/src/shared/components/ui/ToastNotification";
 
 export default function RootLayout({
   children,
@@ -10,7 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="flex flex-col min-h-[100dvh]">
+      <body className="flex flex-col min-h-dvh">
         <Header />
         <main
           className="
@@ -20,6 +21,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <NavMobile />
+        <ToastNotification />
       </body>
     </html>
   );

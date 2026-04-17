@@ -1,16 +1,41 @@
 export async function getProjects() {
   return [
     {
-      slug: "fmdos",
-      title: "FMDOS Concurso",
-      description: "Sistema de votación con alto tráfico",
-      image: "https://res.cloudinary.com/xxx/fmdos.jpg",
+      id: "1",
+      slug: "restaurant-landing",
+      title: "Restaurant Landing",
+      description:
+        "Landing moderna para restaurante con enfoque en diseño visual y conversión.",
+      image:
+        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/restaurant_px174z.jpg",
+      category: "landings",
+      tags: ["Next.js", "Tailwind", "UI/UX"],
+      demo: "https://restaurant-landing-one.vercel.app/",
     },
     {
-      slug: "radio-app",
-      title: "Radio App",
-      description: "Streaming y noticias",
-      image: "https://res.cloudinary.com/xxx/radio-app.jpg",
+      id: "2",
+      slug: "ecommerce-mern",
+      title: "Ecommerce MERN",
+      description:
+        "Plataforma ecommerce completa con autenticación, carrito y panel admin.",
+      image:
+        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/ecommerce_dk0wuo.jpg",
+      category: "ecommerce",
+      tags: ["React", "Node.js", "MongoDB"],
+      demo: "https://ecommerce-mern-theta-six.vercel.app/",
+    },
+   
+    {
+      id: "3",
+      slug: "real-estate",
+      title: "Real Estate App",
+      description:
+        "Aplicación inmobiliaria con listados dinámicos y filtrado avanzado.",
+      image:
+        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/real-estate_ts67hk.jpg",
+      category: "apps",
+      tags: ["Next.js", "API", "Filters"],
+      demo: "https://real-estate-app-eight-virid.vercel.app/",
     },
   ];
 }
@@ -45,8 +70,7 @@ export const educationData = [
     title: "Certificación JavaScript",
     institution: "CoderHouse",
     image: "https://www.kevcodesdev.cl/images/education/coderhouse.png",
-    description:
-      "Fundamentos de JavaScript moderno: DOM, AJAX y JSON.",
+    description: "Fundamentos de JavaScript moderno: DOM, AJAX y JSON.",
   },
   {
     id: "titulo-profesional",

@@ -1,89 +1,23 @@
-import Link from "next/link";
-import { getProjects } from "../../../src/features/projects/data";
-import Image from "next/image";
+import { getProjects } from "../../../src/features/projects/data/projects";
+import Projects from "@/src/features/projects/components/Projects";
 
 export default async function ProjectsPage() {
-  const projectsData = await getProjects();
+  const projects = await getProjects();
+
   return (
-    <section className="section-container">
-      {/* HEADER */}
-     <div className="flex justify-center items-center w-full">
-       <header className="text-center mb-20 max-w-2xl">
-        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-          Proyectos
+    <section className="py-24">
+      <header className="text-center mb-16 px-4">
+        <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+          Proyectos <span className="text-blue-500">Destacados</span>
         </h2>
-
-        <div className="w-20 h-1 bg-slate-400 mx-auto mt-6 mb-8 rounded-full" />
-
-        <p className="text-slate-400 leading-relaxed">
-          Proyectos donde aplico arquitectura moderna, performance y UX.
+        <div className="w-16 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.5)]" />
+        <p className="text-slate-400 mt-6 max-w-xl mx-auto text-lg">
+          Soluciones digitales construidas con enfoque en escalabilidad y
+          experiencia de usuario.
         </p>
       </header>
-     </div>
-
-      {/* GRID */}
-      <div className="w-full max-w-6xl grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projectsData.map((project) => (
-          <Link
-            key={project.slug}
-            href={`/projects/${project.slug}`}
-            className="group"
-          >
-            <article
-              className="
-                rounded-2xl overflow-hidden
-                border border-[var(--color-border)]
-                bg-[var(--color-surface)]
-                transition-all duration-300
-                hover:border-[var(--color-primary)]/40
-                hover:shadow-[0_10px_40px_rgba(0,0,0,0.4)]
-              "
-            >
-              {/* IMAGE */}
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-
-                {/* subtle overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              </div>
-
-              {/* CONTENT */}
-              <div className="p-5 flex flex-col gap-3">
-                <h3 className="text-lg font-semibold">{project.title}</h3>
-
-                <p className="text-sm text-[var(--color-muted)] line-clamp-2">
-                  {project.description}
-                </p>
-
-                {/* TAGS */}
-                {/* <div className="flex flex-wrap gap-2 mt-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="
-                        text-xs px-2.5 py-1 rounded-md
-                        bg-[var(--color-primary)]/10
-                        text-[var(--color-primary)]
-                      "
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div> */}
-
-                {/* CTA */}
-                <div className="mt-3 text-sm text-[var(--color-accent)] group-hover:underline">
-                  Ver proyecto →
-                </div>
-              </div>
-            </article>
-          </Link>
-        ))}
+      <div className="max-w-6xl mx-auto px-4">
+        <Projects projects={projects} />
       </div>
     </section>
   );
