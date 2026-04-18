@@ -66,7 +66,7 @@ export default function ContactForm() {
               const value = e.target.value
                 .replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, "")
                 .replace(/\s{2,}/g, " ");
-              setValue("name", value); 
+              setValue("name", value);
             }
           })}
           type="text"
@@ -138,7 +138,7 @@ export default function ContactForm() {
           disabled={isPending}
           className="w-full rounded-xl bg-black px-4 py-3 text-sm font-medium text-white
   transition-all duration-200
-  hover:bg-zinc-800
+  hover:bg-zinc-800 cursor-pointer
   active:scale-[0.98]
   disabled:cursor-not-allowed disabled:opacity-60"
         >

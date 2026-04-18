@@ -8,8 +8,15 @@ export async function getProjects() {
         "Landing moderna para restaurante con enfoque en diseño visual y conversión.",
       image:
         "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/restaurant_px174z.jpg",
-      category: "landings",
-      tags: ["Next.js", "Tailwind", "UI/UX"],
+      category: "restaurants",
+      tags: [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Cloudinary",
+        "Framer Motion",
+        "Performance Optimization",
+      ],
       demo: "https://restaurant-landing-one.vercel.app/",
     },
     {
@@ -24,7 +31,7 @@ export async function getProjects() {
       tags: ["React", "Node.js", "MongoDB"],
       demo: "https://ecommerce-mern-theta-six.vercel.app/",
     },
-   
+
     {
       id: "3",
       slug: "real-estate",
@@ -33,7 +40,7 @@ export async function getProjects() {
         "Aplicación inmobiliaria con listados dinámicos y filtrado avanzado.",
       image:
         "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/real-estate_ts67hk.jpg",
-      category: "apps",
+      category: "landings",
       tags: ["Next.js", "API", "Filters"],
       demo: "https://real-estate-app-eight-virid.vercel.app/",
     },

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { Project } from "../types/project.types";
 
@@ -10,7 +9,7 @@ interface ProjectsCardsProps {
 
 export default function ProjectsCards({ projects }: ProjectsCardsProps) {
   return (
-    <div className="w-full max-w-7xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 px-4">
+    <div className="w-full max-w-7xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 py-4">
       {projects.map((project) => (
         <a
           key={project.slug}
@@ -52,19 +51,27 @@ export default function ProjectsCards({ projects }: ProjectsCardsProps) {
                 </p>
               </div>
 
-              {/* TAGS */}
-              {project.tags && (
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs text-gray-300 bg-white/5 px-2 py-1 rounded-md border border-white/10"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
+              <div className="flex flex-wrap gap-2">
+                {project.tags?.map((tag) => (
+                  <span
+                    key={tag}
+                    className="
+  text-xs font-medium
+  px-2.5 py-1
+  rounded-full
+  bg-white/5
+  text-white/70
+  border border-white/10
+  backdrop-blur
+  transition-all duration-200
+  hover:bg-white/10 hover:text-white hover:scale-[1.05]
+"
+                  >
+                    {tag}
+                  </span>
+                ))}
+
+              </div>
 
               {/* CTA INTEGRADO */}
               <div className="mt-auto flex items-center justify-between pt-4 border-t border-white/10">
