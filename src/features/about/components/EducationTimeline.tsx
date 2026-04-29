@@ -1,5 +1,3 @@
-
-
 import { Timeline } from "@/src/shared/components/ui/Timeline";
 import { educationData } from "../data";
 
@@ -9,10 +7,9 @@ export function EducationTimeline() {
       data={educationData.map((item) => ({
         id: item.id.toString(),
         period: item.period,
-        description: [item.description],
+        description: item.description,
         logo: item.logoUrl,
       }))}
     />
-
   );
 }

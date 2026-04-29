@@ -3,7 +3,7 @@ export interface EducationItem {
   period: string;
   title: string;
   institution: string;
-  description: string;
+  description: string[];
   logoUrl: string;
 }
 
@@ -13,8 +13,11 @@ export const educationData: EducationItem[] = [
     period: "2024 – 2025",
     title: "Especialización en Desarrollo de Aplicaciones Frontend",
     institution: "Adalid",
-    description:
-      "Especialización enfocada en fundamentos de programación web, arquitectura frontend y diseño de interfaces.",
+    description: [
+      "Fundamentos de programación web y arquitectura frontend",
+      "Desarrollo de interfaces modernas con enfoque UX/UI",
+      "Aplicación de buenas prácticas y patrones de diseño",
+    ],
     logoUrl:
       "https://res.cloudinary.com/dy651pevq/image/upload/v1775782711/portfolio/adalid_mkfj0y.png",
   },
@@ -23,8 +26,13 @@ export const educationData: EducationItem[] = [
     period: "2023",
     title: "Certificación React.js",
     institution: "CoderHouse",
-    description:
-      "Curso avanzado de React: componentes, hooks, routing, consumo de APIs, Context API y proyecto final.",
+    description: [
+      "Desarrollo de componentes reutilizables",
+      "Uso de Hooks (useState, useEffect, etc.)",
+      "Routing con React Router",
+      "Consumo de APIs REST",
+      "Gestión de estado con Context API",
+    ],
     logoUrl:
       "https://res.cloudinary.com/dy651pevq/image/upload/f_auto,q_auto/v1775782721/portfolio/coderhouse_f2dc79.png",
   },
@@ -33,8 +41,12 @@ export const educationData: EducationItem[] = [
     period: "2022",
     title: "Certificación JavaScript",
     institution: "CoderHouse",
-    description:
-      "Fundamentos de JavaScript moderno: DOM, AJAX, JSON y prácticas aplicadas.",
+    description: [
+      "Manipulación del DOM",
+      "Uso de AJAX y Fetch API",
+      "Trabajo con JSON",
+      "Buenas prácticas de JavaScript moderno",
+    ],
     logoUrl:
       "https://res.cloudinary.com/dy651pevq/image/upload/f_auto,q_auto/v1775782721/portfolio/coderhouse_f2dc79.png",
   },
@@ -43,9 +55,13 @@ export const educationData: EducationItem[] = [
     period: "2019 – 2022",
     title: "Técnico en Programación y Análisis de Sistemas",
     institution: "Instituto Profesional AIEP",
-    description:
-      "Formación técnica en análisis, diseño, desarrollo e implementación de sistemas de software.",
+    description: [
+      "Análisis y diseño de sistemas",
+      "Desarrollo de software",
+      "Modelamiento de bases de datos",
+      "Implementación de soluciones tecnológicas",
+    ],
     logoUrl:
-      "https://res.cloudinary.com/dy651pevq/image/upload/v1775782711/portfolio/aiep_tyyios.svg", 
+      "https://res.cloudinary.com/kpardo-cloud/image/upload/v1777497977/portfolio/logo_vjjzdh.png",
   },
 ];

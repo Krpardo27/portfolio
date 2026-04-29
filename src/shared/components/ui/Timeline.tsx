@@ -20,7 +20,7 @@ type Props = {
 export function Timeline({ data }: Props) {
   return (
     <section className="section-container">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
 
         {/* TIMELINE */}
         <div className="relative">
@@ -42,14 +42,13 @@ export function Timeline({ data }: Props) {
                 delay: index * 0.15, // stagger
               }}
               viewport={{ once: true, margin: "-100px" }}
-              className={`mb-16 flex flex-col relative md:flex-row ${
-                index % 2 === 0 ? "md:flex-row-reverse" : ""
-              }`}
+              className={`mb-16 flex flex-col relative md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
             >
               {/* CARD */}
               <div
                 className={`
-                  group lg:p-6 p-2 rounded-2xl 
+                  group lg:p-6 p-2 rounded-2xl max-w-lg
                   border border-white/10 
                   bg-white/5 backdrop-blur
                   transition-all duration-300
@@ -64,19 +63,19 @@ export function Timeline({ data }: Props) {
                   {item.logo && (
                     <Image
                       src={item.logo}
-                      alt={item.description}
+                      alt={item.description.join(", ")}
                       width={48}
                       height={48}
                       className="
                         w-12 h-12 object-contain 
-                        rounded-lg bg-white/5 p-1
+                        rounded-lg bg-white p-1
                         transition
                       "
                     />
                   )}
 
                   <div>
-              
+
 
                     {item.location && (
                       <div className="flex items-center gap-2 text-xs text-slate-500 mt-1">
@@ -88,10 +87,9 @@ export function Timeline({ data }: Props) {
                 </div>
 
                 {/* DESCRIPTION */}
-                <ul className="space-y-2 text-sm text-slate-300 mb-4">
+                <ul className="space-y-2 text-sm text-slate-300 mb-4 list-disc pl-5 marker:text-blue-400">
                   {item.description.map((desc, i) => (
-                    <li key={i} className="flex gap-2">
-                      <span className="text-blue-400">•</span>
+                    <li key={`${item.id}-${i}`} className="leading-snug">
                       {desc}
                     </li>
                   ))}
