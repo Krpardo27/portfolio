@@ -3,7 +3,7 @@ export type Project = {
   title: string;
   description: string;
   image: string;
-  category?: string;
+  categories?: string[];
   tags?: string[];
   demo?: string;
   id?: string;

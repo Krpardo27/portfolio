@@ -13,7 +13,7 @@ export default function ContactPage() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="mx-auto space-y-6 section-container"
       >
-        <div className="space-y-1 text-center max-w-lg flex flex-col items-center justify-center mx-auto">
+        <div className="space-y-4 text-center max-w-lg flex flex-col items-center justify-center mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}

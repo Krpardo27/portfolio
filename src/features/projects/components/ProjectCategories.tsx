@@ -4,9 +4,9 @@ import { projectCategories } from "../data/categories";
 
 export type ProjectCategory =
   | "all"
-  | "restaurants"
+  // | "restaurants"
   | "landings"
-  | "ecommerce";
+  | "pages";
 
 export default function ProjectCategories({
   active,

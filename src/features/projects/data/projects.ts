@@ -8,7 +8,7 @@ export async function getProjects() {
         "Landing moderna para restaurante con enfoque en diseño visual y conversión.",
       image:
         "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/restaurant_px174z.jpg",
-      category: "restaurants",
+      categories: ["landings"],
       tags: [
         "React",
         "Vite",
@@ -21,17 +21,16 @@ export async function getProjects() {
     },
     {
       id: "2",
-      slug: "ecommerce-mern",
-      title: "Ecommerce MERN",
+      slug: "drinks-landing",
+      title: "Drinks Landing",
       description:
-        "Plataforma ecommerce completa con autenticación, carrito y panel admin.",
+        "Landing page para tienda de vinos y bebidas premium con diseño elegante y animaciones fluidas.",
       image:
-        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/ecommerce_dk0wuo.jpg",
-      category: "ecommerce",
-      tags: ["React", "Node.js", "MongoDB"],
-      demo: "https://ecommerce-mern-theta-six.vercel.app/",
+        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1777493266/portfolio/drinks-project_vi9acg.jpg",
+      categories: ["landings"],
+      tags: ["Next.js", "Tailwind CSS", "Framer Motion", "React icons"],
+      demo: "https://drinks-landing-page.vercel.app/",
     },
-
     {
       id: "3",
       slug: "real-estate",
@@ -40,10 +39,22 @@ export async function getProjects() {
         "Aplicación inmobiliaria con listados dinámicos y filtrado avanzado.",
       image:
         "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/real-estate_ts67hk.jpg",
-      category: "landings",
+      categories: ["pages"],
       tags: ["Next.js", "API", "Filters"],
       demo: "https://real-estate-app-eight-virid.vercel.app/",
     },
+    {
+      id: "4",
+      slug: "menu-template",
+      title: "Menu Template",
+      description: "Plantilla de menú interactivo para restaurantes",
+      image:
+        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776880764/portfolio/menu-template_puevym.jpg",
+      categories: ["landings"],
+      tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+      demo: "https://menu-template-next.vercel.app/",
+    },
+    
   ];
 }
 

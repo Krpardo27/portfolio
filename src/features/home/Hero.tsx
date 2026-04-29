@@ -1,5 +1,6 @@
 "use client";
 
+import Heading from "@/src/shared/components/ui/Heading";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,17 +31,19 @@ export function Hero() {
             Disponible para proyectos freelance
           </motion.span>
 
-          <motion.h1
+          <motion.div
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
             }}
             className="text-4xl md:text-6xl font-bold leading-tight tracking-tight"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
-              Kevin Pardo
-            </span>
-          </motion.h1>
+            <Heading level={1}>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+                Kevin Pardo
+              </span>
+            </Heading>
+          </motion.div>
 
           <motion.h2
             variants={{

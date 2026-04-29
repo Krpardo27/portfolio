@@ -4,8 +4,6 @@ import { experienceData } from "../data";
 export function ExperienceTimeline() {
   return (
     <Timeline
-      title="Experiencia Laboral"
-      description="Experiencia desarrollando interfaces modernas con foco en performance y UX."
       data={experienceData.map((job) => ({
         id: job.id,
         title: job.position,
