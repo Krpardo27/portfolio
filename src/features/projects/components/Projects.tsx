@@ -14,7 +14,9 @@ export default function Projects({ projects }: Props) {
 
   const filtered = useMemo(() => {
     if (activeCategory === "all") return projects;
-    return projects.filter(p => p.category === activeCategory);
+    return projects.filter(p => 
+      p.categories?.includes(activeCategory)
+    );
   }, [projects, activeCategory]);
 
   return (
@@ -23,7 +25,7 @@ export default function Projects({ projects }: Props) {
         active={activeCategory}
         onChange={setActiveCategory}
       />
-
+      
       <ProjectsCards projects={filtered} />
     </>
   );

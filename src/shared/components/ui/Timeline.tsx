@@ -6,8 +6,6 @@ import { FiCalendar, FiMapPin } from "react-icons/fi";
 
 type TimelineItem = {
   id: string;
-  title: string;
-  subtitle: string;
   period: string;
   location?: string;
   description: string[];
@@ -16,25 +14,13 @@ type TimelineItem = {
 };
 
 type Props = {
-  title: string;
-  description: string;
   data: TimelineItem[];
 };
 
-export function Timeline({ title, description, data }: Props) {
+export function Timeline({ data }: Props) {
   return (
     <section className="section-container">
       <div className="max-w-5xl mx-auto">
-        {/* HEADER */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-            {title}
-          </h2>
-
-          <div className="w-20 h-1 bg-blue-500 mx-auto mt-6 mb-8 rounded-full" />
-
-          <p className="text-slate-400 max-w-2xl mx-auto">{description}</p>
-        </div>
 
         {/* TIMELINE */}
         <div className="relative">
@@ -78,7 +64,7 @@ export function Timeline({ title, description, data }: Props) {
                   {item.logo && (
                     <Image
                       src={item.logo}
-                      alt={item.subtitle}
+                      alt={item.description}
                       width={48}
                       height={48}
                       className="
@@ -90,11 +76,7 @@ export function Timeline({ title, description, data }: Props) {
                   )}
 
                   <div>
-                    <h3 className="text-lg font-semibold text-white">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-sm text-slate-400">{item.subtitle}</p>
+              
 
                     {item.location && (
                       <div className="flex items-center gap-2 text-xs text-slate-500 mt-1">
