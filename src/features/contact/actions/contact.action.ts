@@ -3,8 +3,8 @@
 import { rateLimit } from "@/src/shared/lib/rate-limit";
 import { contactFormSchema, ContactInput } from "../schema";
 import { headers } from "next/headers";
-import { resend } from "@/src/shared/lib/resend";
 import { ContactEmail } from "@/src/shared/emails/ContactEmail";
+import { getResend } from "@/src/shared/lib/resend";
 
 export async function sendContactForm(data: ContactInput) {
   // 1. Validación
@@ -39,8 +39,15 @@ export async function sendContactForm(data: ContactInput) {
 
   // 4. Email
   try {
+    const resend = getResend();
+
+    const from = process.env.EMAIL_FROM;
+    if (!from) {
+      throw new Error("Missing EMAIL_FROM");
+    }
+
     const { error } = await resend.emails.send({
-      from: process.env.EMAIL_FROM!,
+      from,
       to: ["kpardoveas@gmail.com"],
       subject: `Nuevo mensaje de ${name}`,
       react: ContactEmail({ name, email, message }),

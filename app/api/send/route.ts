@@ -1,21 +1,22 @@
 import { ContactEmail } from "@/src/shared/emails/ContactEmail";
-import { resend } from "@/src/shared/lib/resend";
+import { getResend } from "@/src/shared/lib/resend";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-
     const { name, email, message } = body;
 
     if (!name || !email || !message) {
       return Response.json({ error: "Missing fields" }, { status: 400 });
     }
 
-    const { data, error } = await resend.emails.send({
+    const resend = getResend();
+
+    const { error } = await resend.emails.send({
       from: process.env.EMAIL_FROM!,
       to: ["kpardoveas@gmail.com"],
       subject: `Nuevo mensaje de ${name}`,
-      react: ContactEmail({ name, email, message }), 
+      react: ContactEmail({ name, email, message }),
     });
 
     if (error) {
