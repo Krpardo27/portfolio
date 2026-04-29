@@ -23,9 +23,9 @@ export async function sendContactForm(data: ContactInput) {
   const headersList = await headers();
 
   const ip =
-    headersList.get("x-forwarded-for")?.split(",")[0] ||
+    headersList.get("x-forwarded-for")?.split(",")[0]?.trim() ||
     headersList.get("x-real-ip") ||
-    "unknown";
+    crypto.randomUUID();
 
   // 3. Rate limit
   const limit = rateLimit(ip || crypto.randomUUID());
