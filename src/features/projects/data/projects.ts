@@ -33,6 +33,56 @@ export async function getProjects() {
     },
     {
       id: "3",
+      slug: "tienda-next",
+      title: "Tienda Next.js",
+      description:
+        "E-commerce fullstack desarrollado con Next.js App Router, autenticación avanzada con Better Auth, recuperación de contraseña vía Mailtrap, dashboard administrativo, gestión de productos y categorías, búsqueda en tiempo real, carrito de compras y arquitectura moderna orientada a escalabilidad.",
+      image:
+        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1778782801/portfolio/tienda-next_qawypv.jpg",
+
+      categories: ["fullstack", "ecommerce"],
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Better Auth",
+        "Mailtrap",
+        "TailwindCSS",
+        "Zod",
+        "API Routes",
+        "Server Actions",
+        "Dashboard Admin",
+        "Live Search",
+      ],
+
+      features: [
+        "Registro e inicio de sesión",
+        "Recuperación y reseteo de contraseña",
+        "Correos transaccionales con Mailtrap",
+        "Dashboard administrativo",
+        "CRUD de productos y categorías",
+        "Búsqueda dinámica en tiempo real",
+        "Protección de rutas privadas",
+        "Validaciones con Zod",
+        "Arquitectura App Router",
+        "Responsive Design",
+      ],
+
+      techStack: {
+        frontend: ["Next.js", "React", "TypeScript", "TailwindCSS"],
+        backend: ["Next.js API Routes", "Server Actions", "Prisma ORM"],
+        database: ["PostgreSQL"],
+        auth: ["Better Auth"],
+        services: ["Mailtrap", "Cloudinary", "Vercel"],
+      },
+
+      demo: "https://tienda-next-eight.vercel.app/order/cafe",
+    },
+
+    {
+      id: "5",
       slug: "real-estate",
       title: "Real Estate App",
       description:
@@ -54,7 +104,6 @@ export async function getProjects() {
       tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
       demo: "https://menu-template-next.vercel.app/",
     },
-    
   ];
 }
 

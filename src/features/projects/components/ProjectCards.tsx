@@ -39,7 +39,7 @@ export default function ProjectsCards({ projects }: ProjectsCardsProps) {
                   {project.title}
                 </h3>
 
-                <p className="text-sm text-gray-400 mt-2 line-clamp-2">
+                <p className="text-sm text-gray-400 mt-2">
                   {project.description}
                 </p>
               </div>

@@ -19,7 +19,7 @@ export const educationData: EducationItem[] = [
       "Aplicación de buenas prácticas y patrones de diseño",
     ],
     logoUrl:
-      "https://res.cloudinary.com/dy651pevq/image/upload/v1775782711/portfolio/adalid_mkfj0y.png",
+      "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782711/portfolio/adalid_mkfj0y.png",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ export const educationData: EducationItem[] = [
       "Gestión de estado con Context API",
     ],
     logoUrl:
-      "https://res.cloudinary.com/dy651pevq/image/upload/f_auto,q_auto/v1775782721/portfolio/coderhouse_f2dc79.png",
+      "https://res.cloudinary.com/kpardo-cloud/image/upload/f_auto,q_auto/v1775782721/portfolio/coderhouse_f2dc79.png",
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ export const educationData: EducationItem[] = [
       "Buenas prácticas de JavaScript moderno",
     ],
     logoUrl:
-      "https://res.cloudinary.com/dy651pevq/image/upload/f_auto,q_auto/v1775782721/portfolio/coderhouse_f2dc79.png",
+      "https://res.cloudinary.com/kpardo-cloud/image/upload/f_auto,q_auto/v1775782721/portfolio/coderhouse_f2dc79.png",
   },
   {
     id: 4,

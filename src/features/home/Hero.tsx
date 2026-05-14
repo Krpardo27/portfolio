@@ -132,7 +132,7 @@ export function Hero() {
             "
           >
             <Image
-              src="https://res.cloudinary.com/dy651pevq/image/upload/v1775785552/portfolio/perfil_flmc7z.jpg"
+              src="https://res.cloudinary.com/kpardo-cloud/image/upload/v1775785552/portfolio/perfil_flmc7z.jpg"
               alt="Kevin Pardo"
               fill
               className="object-cover"
