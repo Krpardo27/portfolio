@@ -118,7 +118,7 @@ export const educationData = [
     period: "2024 – 2025",
     title: "Especialización en Desarrollo de Aplicaciones Frontend",
     institution: "Adalid",
-    image: "https://www.kevcodesdev.cl/images/education/adalid.png",
+    image: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782711/portfolio/adalid_mkfj0y.png",
     description:
       "Especialización enfocada en fundamentos de programación web, arquitectura frontend y diseño de interfaces.",
   },
@@ -127,7 +127,7 @@ export const educationData = [
     period: "2023",
     title: "Certificación React.js",
     institution: "CoderHouse",
-    image: "/images/education/coderhouse.png",
+    image: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782721/portfolio/coderhouse_f2dc79.png",
     description:
       "Curso avanzado de React: componentes, hooks, routing y consumo de APIs.",
   },
@@ -136,7 +136,7 @@ export const educationData = [
     period: "2022",
     title: "Certificación JavaScript",
     institution: "CoderHouse",
-    image: "https://www.kevcodesdev.cl/images/education/coderhouse.png",
+    image: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782721/portfolio/coderhouse_f2dc79.png",
     description: "Fundamentos de JavaScript moderno: DOM, AJAX y JSON.",
   },
   {
@@ -144,7 +144,7 @@ export const educationData = [
     period: "2019 – 2022",
     title: "Técnico en Programación y Análisis de Sistemas",
     institution: "Instituto Profesional AIEP",
-    image: "https://www.kevcodesdev.cl/images/education/aiep.png",
+    image: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1777497977/portfolio/logo_vjjzdh.png",
     description:
       "Formación técnica en análisis, diseño, desarrollo e implementación de sistemas de software, cubriendo el ciclo completo del desarrollo.",
   },

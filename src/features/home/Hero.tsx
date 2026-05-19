@@ -1,6 +1,7 @@
 "use client";
 
 import Heading from "@/src/shared/components/ui/Heading";
+import ResumeButton from "@/src/shared/components/ui/ResumeButton";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -101,6 +102,22 @@ export function Hero() {
             >
               Contacto
             </Link>
+            <a
+              href="/CV-Kevin-Pardo.pdf"
+              download="CV-Kevin-Pardo.pdf"
+              className="
+    px-6 py-3 rounded-xl 
+    border border-blue-500/30
+    hover:bg-blue-500/10
+    text-blue-400 hover:text-blue-300
+    font-medium 
+    transition-all duration-300
+    hover:scale-[1.03]
+    flex items-center justify-center gap-2
+  "
+            >
+              Descargar CV
+            </a>
           </motion.div>
         </motion.div>
 
