@@ -1,7 +1,6 @@
 "use client";
 
 import Heading from "@/src/shared/components/ui/Heading";
-import ResumeButton from "@/src/shared/components/ui/ResumeButton";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
