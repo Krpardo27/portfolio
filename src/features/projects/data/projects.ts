@@ -40,7 +40,7 @@ export async function getProjects() {
       image:
         "https://res.cloudinary.com/kpardo-cloud/image/upload/v1778782801/portfolio/tienda-next_qawypv.jpg",
 
-      categories: ["fullstack", "ecommerce"],
+      categories: ["fullstack", "ecommerce", "all"],
       tags: [
         "Next.js",
         "React",
@@ -89,7 +89,7 @@ export async function getProjects() {
         "Aplicación inmobiliaria con listados dinámicos y filtrado avanzado.",
       image:
         "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/real-estate_ts67hk.jpg",
-      categories: ["pages"],
+      categories: ["landing"],
       tags: ["Next.js", "API", "Filters"],
       demo: "https://real-estate-app-eight-virid.vercel.app/",
     },

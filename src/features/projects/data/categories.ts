@@ -14,9 +14,9 @@ export const projectCategories = [
     label: "Landings",
     slug: "landings",
   },
-  {
-    id: "pages",
-    label: "Páginas",
-    slug: "pages",
-  },
+  // {
+  //   id: "pages",
+  //   label: "Páginas",
+  //   slug: "pages",
+  // },
 ];
