@@ -33,68 +33,6 @@ export async function getProjects() {
     },
     {
       id: "3",
-      slug: "tienda-next",
-      title: "Tienda Next.js",
-      description:
-        "E-commerce fullstack desarrollado con Next.js App Router, autenticación avanzada con Better Auth, recuperación de contraseña vía Mailtrap, dashboard administrativo, gestión de productos y categorías, búsqueda en tiempo real, carrito de compras y arquitectura moderna orientada a escalabilidad.",
-      image:
-        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1778782801/portfolio/tienda-next_qawypv.jpg",
-
-      categories: ["fullstack", "ecommerce", "all"],
-      tags: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Prisma",
-        "PostgreSQL",
-        "Better Auth",
-        "Mailtrap",
-        "TailwindCSS",
-        "Zod",
-        "API Routes",
-        "Server Actions",
-        "Dashboard Admin",
-        "Live Search",
-      ],
-
-      features: [
-        "Registro e inicio de sesión",
-        "Recuperación y reseteo de contraseña",
-        "Correos transaccionales con Mailtrap",
-        "Dashboard administrativo",
-        "CRUD de productos y categorías",
-        "Búsqueda dinámica en tiempo real",
-        "Protección de rutas privadas",
-        "Validaciones con Zod",
-        "Arquitectura App Router",
-        "Responsive Design",
-      ],
-
-      techStack: {
-        frontend: ["Next.js", "React", "TypeScript", "TailwindCSS"],
-        backend: ["Next.js API Routes", "Server Actions", "Prisma ORM"],
-        database: ["PostgreSQL"],
-        auth: ["Better Auth"],
-        services: ["Mailtrap", "Cloudinary", "Vercel"],
-      },
-
-      demo: "https://tienda-next-eight.vercel.app/order/cafe",
-    },
-
-    {
-      id: "5",
-      slug: "real-estate",
-      title: "Real Estate App",
-      description:
-        "Aplicación inmobiliaria con listados dinámicos y filtrado avanzado.",
-      image:
-        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/real-estate_ts67hk.jpg",
-      categories: ["landing"],
-      tags: ["Next.js", "API", "Filters"],
-      demo: "https://real-estate-app-eight-virid.vercel.app/",
-    },
-    {
-      id: "4",
       slug: "menu-template",
       title: "Menu Template",
       description: "Plantilla de menú interactivo para restaurantes",
@@ -104,6 +42,68 @@ export async function getProjects() {
       tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
       demo: "https://menu-template-next.vercel.app/",
     },
+    // {
+    //   id: "3",
+    //   slug: "tienda-next",
+    //   title: "Tienda Next.js",
+    //   description:
+    //     "E-commerce fullstack desarrollado con Next.js App Router, autenticación avanzada con Better Auth, recuperación de contraseña vía Mailtrap, dashboard administrativo, gestión de productos y categorías, búsqueda en tiempo real, carrito de compras y arquitectura moderna orientada a escalabilidad.",
+    //   image:
+    //     "https://res.cloudinary.com/kpardo-cloud/image/upload/v1778782801/portfolio/tienda-next_qawypv.jpg",
+
+    //   categories: ["fullstack", "ecommerce", "all"],
+    //   tags: [
+    //     "Next.js",
+    //     "React",
+    //     "TypeScript",
+    //     "Prisma",
+    //     "PostgreSQL",
+    //     "Better Auth",
+    //     "Mailtrap",
+    //     "TailwindCSS",
+    //     "Zod",
+    //     "API Routes",
+    //     "Server Actions",
+    //     "Dashboard Admin",
+    //     "Live Search",
+    //   ],
+
+    //   features: [
+    //     "Registro e inicio de sesión",
+    //     "Recuperación y reseteo de contraseña",
+    //     "Correos transaccionales con Mailtrap",
+    //     "Dashboard administrativo",
+    //     "CRUD de productos y categorías",
+    //     "Búsqueda dinámica en tiempo real",
+    //     "Protección de rutas privadas",
+    //     "Validaciones con Zod",
+    //     "Arquitectura App Router",
+    //     "Responsive Design",
+    //   ],
+
+    //   techStack: {
+    //     frontend: ["Next.js", "React", "TypeScript", "TailwindCSS"],
+    //     backend: ["Next.js API Routes", "Server Actions", "Prisma ORM"],
+    //     database: ["PostgreSQL"],
+    //     auth: ["Better Auth"],
+    //     services: ["Mailtrap", "Cloudinary", "Vercel"],
+    //   },
+
+    //   demo: "https://tienda-next-eight.vercel.app/order/cafe",
+    // },
+
+    // {
+    //   id: "5",
+    //   slug: "real-estate",
+    //   title: "Real Estate App",
+    //   description:
+    //     "Aplicación inmobiliaria con listados dinámicos y filtrado avanzado.",
+    //   image:
+    //     "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/real-estate_ts67hk.jpg",
+    //   categories: ["landing"],
+    //   tags: ["Next.js", "API", "Filters"],
+    //   demo: "https://real-estate-app-eight-virid.vercel.app/",
+    // },
   ];
 }
 
@@ -118,7 +118,8 @@ export const educationData = [
     period: "2024 – 2025",
     title: "Especialización en Desarrollo de Aplicaciones Frontend",
     institution: "Adalid",
-    image: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782711/portfolio/adalid_mkfj0y.png",
+    image:
+      "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782711/portfolio/adalid_mkfj0y.png",
     description:
       "Especialización enfocada en fundamentos de programación web, arquitectura frontend y diseño de interfaces.",
   },
@@ -127,7 +128,8 @@ export const educationData = [
     period: "2023",
     title: "Certificación React.js",
     institution: "CoderHouse",
-    image: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782721/portfolio/coderhouse_f2dc79.png",
+    image:
+      "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782721/portfolio/coderhouse_f2dc79.png",
     description:
       "Curso avanzado de React: componentes, hooks, routing y consumo de APIs.",
   },
@@ -136,7 +138,8 @@ export const educationData = [
     period: "2022",
     title: "Certificación JavaScript",
     institution: "CoderHouse",
-    image: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782721/portfolio/coderhouse_f2dc79.png",
+    image:
+      "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782721/portfolio/coderhouse_f2dc79.png",
     description: "Fundamentos de JavaScript moderno: DOM, AJAX y JSON.",
   },
   {
@@ -144,7 +147,8 @@ export const educationData = [
     period: "2019 – 2022",
     title: "Técnico en Programación y Análisis de Sistemas",
     institution: "Instituto Profesional AIEP",
-    image: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1777497977/portfolio/logo_vjjzdh.png",
+    image:
+      "https://res.cloudinary.com/kpardo-cloud/image/upload/v1777497977/portfolio/logo_vjjzdh.png",
     description:
       "Formación técnica en análisis, diseño, desarrollo e implementación de sistemas de software, cubriendo el ciclo completo del desarrollo.",
   },
