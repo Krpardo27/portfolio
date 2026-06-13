@@ -49,15 +49,21 @@ export async function sendContactForm(data: ContactInput) {
     const { error } = await resend.emails.send({
       from,
       to: ["kpardoveas@gmail.com"],
+      replyTo: email,
       subject: `Nuevo mensaje de ${name}`,
       react: ContactEmail({ name, email, message }),
     });
 
     if (error) {
+      const message =
+        typeof error === "object" && error && "message" in error
+          ? (error as { message?: string }).message || "Error enviando correo"
+          : "Error enviando correo";
+
       console.error("❌ Resend error:", error);
       return {
         success: false,
-        errors: [{ message: "Error enviando correo" }],
+        errors: [{ message }],
       };
     }
 
@@ -67,10 +73,11 @@ export async function sendContactForm(data: ContactInput) {
       message: "Mensaje enviado correctamente 🚀",
     };
   } catch (err) {
-    console.error("❌ Server error:", err);
+    const message = err instanceof Error ? err.message : "Error interno del servidor";
+    console.error("❌ Server error:", message, err);
     return {
       success: false,
-      errors: [{ message: "Error interno del servidor" }],
+      errors: [{ message }],
     };
   }
 }
