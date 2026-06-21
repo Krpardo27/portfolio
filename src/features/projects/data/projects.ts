@@ -33,17 +33,6 @@ export async function getProjects() {
     },
     {
       id: "3",
-      slug: "menu-template",
-      title: "Menu Template",
-      description: "Plantilla de menú interactivo para restaurantes",
-      image:
-        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776880764/portfolio/menu-template_puevym.jpg",
-      categories: ["landings"],
-      tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      demo: "https://menu-template-next.vercel.app/",
-    },
-    {
-      id: "4",
       slug: "restaurant-admin-panel",
       title: "Restaurant Admin Panel",
       description:
