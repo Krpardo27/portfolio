@@ -6,7 +6,7 @@ export type ProjectCategory =
   | "all"
   // | "restaurants"
   | "landings"
-  // | "pages";
+  | "ful-stack";
 
 export default function ProjectCategories({
   active,

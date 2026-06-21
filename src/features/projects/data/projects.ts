@@ -42,6 +42,28 @@ export async function getProjects() {
       tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
       demo: "https://menu-template-next.vercel.app/",
     },
+    {
+      id: "4",
+      slug: "restaurant-admin-panel",
+      title: "Restaurant Admin Panel",
+      description:
+        "Panel administrativo fullstack para la gestión de productos, categorías y control de disponibilidad en tiempo real. Incluye autenticación segura con Google OAuth mediante Better Auth, protección de rutas privadas, y una interfaz optimizada para operación diaria en entornos de restaurante.",
+      image:
+        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1782003541/portfolio/Captura_de_pantalla_2026-06-20_205738_ic7bjo.png",
+      categories: ["fullstack"],
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Better Auth",
+        "Google OAuth",
+        "Tailwind CSS",
+        "Vercel",
+      ],
+      demo: "https://restaurant-admin-products.vercel.app/auth/login",
+    },
     // {
     //   id: "3",
     //   slug: "tienda-next",
