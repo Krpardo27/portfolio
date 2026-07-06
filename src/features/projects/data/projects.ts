@@ -1,4 +1,6 @@
-export async function getProjects() {
+import { Project } from "../types/project.types";
+
+export async function getProjects(): Promise<Project[]> {
   return [
     {
       id: "1",
@@ -51,70 +53,105 @@ export async function getProjects() {
         "Tailwind CSS",
         "Vercel",
       ],
-      demo: "https://restaurant-admin-products.vercel.app/auth/login",
+      demo: "https://restaurant-admin-products.vercel.app/",
     },
-    // {
-    //   id: "3",
-    //   slug: "tienda-next",
-    //   title: "Tienda Next.js",
-    //   description:
-    //     "E-commerce fullstack desarrollado con Next.js App Router, autenticación avanzada con Better Auth, recuperación de contraseña vía Mailtrap, dashboard administrativo, gestión de productos y categorías, búsqueda en tiempo real, carrito de compras y arquitectura moderna orientada a escalabilidad.",
-    //   image:
-    //     "https://res.cloudinary.com/kpardo-cloud/image/upload/v1778782801/portfolio/tienda-next_qawypv.jpg",
+    {
+      id: "4",
+      slug: "barber-app",
+      title: "Gestión de Barberías",
+      description:
+        "Aplicación web fullstack para la gestión integral de barberías. Permite reservas online, administración de clientes, agenda por barbero, catálogo de servicios, panel administrativo y cálculo inteligente de disponibilidad según la duración de cada servicio.",
+      image:
+        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1783300000/portfolio/portada_svogce.jpg",
+      categories: ["fullstack"],
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Better Auth",
+        "Google OAuth",
+        "Tailwind CSS",
+        "React Hook Form",
+        "Zod",
+        "Vitest",
+      ],
 
-    //   categories: ["fullstack", "ecommerce", "all"],
-    //   tags: [
-    //     "Next.js",
-    //     "React",
-    //     "TypeScript",
-    //     "Prisma",
-    //     "PostgreSQL",
-    //     "Better Auth",
-    //     "Mailtrap",
-    //     "TailwindCSS",
-    //     "Zod",
-    //     "API Routes",
-    //     "Server Actions",
-    //     "Dashboard Admin",
-    //     "Live Search",
-    //   ],
+      features: [
+        "Reservas online con disponibilidad en tiempo real",
+        "Agenda diaria por barbero",
+        "Panel administrativo protegido",
+        "Gestión de clientes",
+        "Gestión de servicios y categorías",
+        "Duración personalizada por servicio y barbero",
+        "Prevención de doble reserva mediante transacciones",
+        "Autenticación con Google OAuth",
+        "Dashboard con métricas",
+        "Responsive Design",
+      ],
+      architecture: [
+        "App Router",
+        "Server Components",
+        "Server Actions",
+        "Prisma ORM",
+        "Relaciones many-to-many",
+        "Transacciones SQL",
+        "Validaciones con Zod",
+        "Autenticación con Better Auth",
+      ],
 
-    //   features: [
-    //     "Registro e inicio de sesión",
-    //     "Recuperación y reseteo de contraseña",
-    //     "Correos transaccionales con Mailtrap",
-    //     "Dashboard administrativo",
-    //     "CRUD de productos y categorías",
-    //     "Búsqueda dinámica en tiempo real",
-    //     "Protección de rutas privadas",
-    //     "Validaciones con Zod",
-    //     "Arquitectura App Router",
-    //     "Responsive Design",
-    //   ],
+      techStack: {
+        frontend: [
+          "Next.js 16",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "React Hook Form",
+          "Framer Motion",
+          "React Icons",
+          "Zod",
+        ],
+        backend: ["Next.js Server Actions", "Prisma ORM", "Better Auth"],
+        database: ["PostgreSQL"],
+        auth: ["Better Auth", "Google OAuth"],
+        testing: ["Vitest"],
+        services: ["Vercel"],
+      },
 
-    //   techStack: {
-    //     frontend: ["Next.js", "React", "TypeScript", "TailwindCSS"],
-    //     backend: ["Next.js API Routes", "Server Actions", "Prisma ORM"],
-    //     database: ["PostgreSQL"],
-    //     auth: ["Better Auth"],
-    //     services: ["Mailtrap", "Cloudinary", "Vercel"],
-    //   },
+      gallery: [
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1783300000/portfolio/portada_svogce.jpg",
+          alt: "Vista principal",
+        },
+        {
+          src: 'https://res.cloudinary.com/kpardo-cloud/image/upload/v1783304501/portfolio/dashboard_gttzth.jpg',
+          alt: "Vista del dashboard",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1783302811/portfolio/agenda_nt4fw5.jpg",
+          alt: "Vista de la agenda diaria",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1783302811/portfolio/clientes_h7qnxm.jpg",
+          alt: "Vista de la gestión de clientes",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1783302811/portfolio/barberos_jockdx.jpg",
+          alt: "Vista de la gestión de barberos",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1783304402/portfolio/editar_riyxcd.jpg",
+          alt: "Vista de la edición de clientes",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1783302810/portfolio/confirm_ziis06.jpg",
+          alt: "Vista de la confirmación",
+        },
+      ],
 
-    //   demo: "https://tienda-next-eight.vercel.app/order/cafe",
-    // },
-
-    // {
-    //   id: "5",
-    //   slug: "real-estate",
-    //   title: "Real Estate App",
-    //   description:
-    //     "Aplicación inmobiliaria con listados dinámicos y filtrado avanzado.",
-    //   image:
-    //     "https://res.cloudinary.com/kpardo-cloud/image/upload/v1776398975/portfolio/real-estate_ts67hk.jpg",
-    //   categories: ["landing"],
-    //   tags: ["Next.js", "API", "Filters"],
-    //   demo: "https://real-estate-app-eight-virid.vercel.app/",
-    // },
+      demo: "https://barber-app-chi-two.vercel.app/",
+    },
   ];
 }
 
