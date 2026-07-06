@@ -1,8 +1,9 @@
-import { Header } from "@/src/shared/components/layout/Header";
+import { Header } from "@/shared/components/layout/Header";
 import "./globals.css";
-import { Footer } from "@/src/shared/components/layout/Footer";
-import { NavMobile } from "@/src/shared/components/layout/NavMobile";
-import ToastNotification from "@/src/shared/components/ui/ToastNotification";
+import { Footer } from "@/shared/components/layout/Footer";
+import { NavMobile } from "@/shared/components/layout/NavMobile";
+import ToastNotification from "@/shared/components/ui/ToastNotification";
+
 
 export default function RootLayout({
   children,

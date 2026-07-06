@@ -1,5 +1,5 @@
-import { EducationTimeline } from "@/src/features/about/components/EducationTimeline";
-import Heading from "@/src/shared/components/ui/Heading";
+import { EducationTimeline } from "@/features/about/components/EducationTimeline";
+import Heading from "@/shared/components/ui/Heading";
 
 export default function AboutPage() {
   return (

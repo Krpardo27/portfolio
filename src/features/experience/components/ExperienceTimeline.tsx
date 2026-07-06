@@ -1,4 +1,4 @@
-import { Timeline } from "../../../shared/components/ui/Timeline";
+import { Timeline } from "@/shared/components/ui/Timeline";
 import { experienceData } from "../data";
 
 export function ExperienceTimeline() {

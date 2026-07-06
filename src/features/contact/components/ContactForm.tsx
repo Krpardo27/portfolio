@@ -3,15 +3,13 @@
 import { toast } from "react-toastify";
 import { useTransition } from "react";
 import { sendContactForm } from "../actions/contact.action";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { contactFormSchema, ContactInput } from "../schema";
+import { contactFormSchema, ContactFormValues, ContactInput } from "../schema";
 import FormErrors from "./FormErrors";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function ContactForm() {
-  const [loading, setLoading] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const {
@@ -20,7 +18,7 @@ export default function ContactForm() {
     formState: { errors },
     reset,
     setValue,
-  } = useForm<ContactInput>({
+  } = useForm<ContactFormValues, unknown, ContactInput>({
     resolver: zodResolver(contactFormSchema),
   });
 
@@ -30,7 +28,7 @@ export default function ContactForm() {
 
       const res = await sendContactForm(data);
 
-      // ⏱ mínimo 2000ms
+      // mínimo 2000ms
       const elapsed = Date.now() - start;
       const remaining = 2000 - elapsed;
 
@@ -54,6 +52,14 @@ export default function ContactForm() {
         onSubmit={handleSubmit(onSubmit)}
         className="max-w-xl mx-auto rounded-xl bg-zinc-100 p-6 section-container shadow-lg"
       >
+        <input
+          {...register("website")}
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="hidden"
+        />
         <label
           htmlFor="name"
           className="my-2 block text-sm font-medium text-zinc-700"
@@ -67,7 +73,7 @@ export default function ContactForm() {
                 .replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, "")
                 .replace(/\s{2,}/g, " ");
               setValue("name", value);
-            }
+            },
           })}
           type="text"
           id="name"
@@ -129,6 +135,7 @@ export default function ContactForm() {
         </label>
         <textarea
           placeholder="Mensaje"
+          maxLength={1500}
           className="w-full rounded-xl border border-zinc-300  px-4 py-3 text-sm outline-none transition text-black focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200"
           {...register("message")}
         />
@@ -152,7 +159,7 @@ export default function ContactForm() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-70"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
