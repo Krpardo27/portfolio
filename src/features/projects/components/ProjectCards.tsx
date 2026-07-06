@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Project } from "../types/project.types";
 
@@ -27,11 +28,12 @@ export default function ProjectsCards({ projects }: ProjectsCardsProps) {
         const visibleTags = project.tags?.slice(0, 4) ?? [];
 
         return (
-          <motion.a
+          <Link
             key={project.slug}
-            href={project.demo ?? "#"}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`/projects/${project.slug}`}
+            className="group block h-full"
+          >
+            <motion.article
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -40,10 +42,7 @@ export default function ProjectsCards({ projects }: ProjectsCardsProps) {
               ease: [0.22, 1, 0.36, 1],
             }}
             whileHover={{ y: -3 }}
-            className="group block h-full"
-          >
-            <article
-              className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] shadow-xl shadow-black/20 backdrop-blur transition duration-300 group-hover:border-blue-400/35 group-hover:bg-white/[0.055] group-hover:shadow-blue-950/25"
+              className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] shadow-xl shadow-black/20 backdrop-blur transition duration-300 group-hover:border-blue-400/35 group-hover:bg-white/5.5 group-hover:shadow-blue-950/25"
             >
               <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-linear-to-r from-transparent via-blue-300/60 to-transparent opacity-0 transition group-hover:opacity-100" />
 
@@ -71,7 +70,7 @@ export default function ProjectsCards({ projects }: ProjectsCardsProps) {
                     {project.title}
                   </h3>
 
-                  <p className="mt-3 overflow-hidden text-sm leading-6 text-slate-400 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
+                  <p className="mt-3 overflow-hidden text-sm leading-6 text-slate-400 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:5]">
                     {project.description}
                   </p>
                 </div>
@@ -88,11 +87,11 @@ export default function ProjectsCards({ projects }: ProjectsCardsProps) {
                 </div>
 
                 <div className="mt-auto flex items-center justify-between border-t border-white/10 pt-4">
-                  <span className="text-sm font-medium text-slate-300">Ver proyecto</span>
+                  <span className="text-sm font-medium text-slate-300">Ver detalle</span>
                 </div>
               </div>
-              </article>
-            </motion.a>
+            </motion.article>
+          </Link>
           );
         })}
       </div>
