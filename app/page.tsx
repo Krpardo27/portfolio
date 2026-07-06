@@ -1,5 +1,11 @@
-import { Hero } from "@/src/features/home/Hero";
+import { Hero } from "@/features/home/Hero";
+import { ServicesSection } from "@/features/services/components/ServicesSection";
 
 export default function HomePage() {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <ServicesSection compactTop variant="compact" />
+    </>
+  );
 }

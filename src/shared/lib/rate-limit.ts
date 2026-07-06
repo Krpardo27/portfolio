@@ -1,34 +1,71 @@
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
+
 type Entry = {
   count: number;
-  lastRequest: number;
+  resetAt: number;
 };
 
 const store = new Map<string, Entry>();
 
 const WINDOW = 60 * 1000;
 const MAX_REQUESTS = 3;
+const UPSTASH_ENABLED = Boolean(
+  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN,
+);
 
-export function rateLimit(ip: string) {
-  const now = Date.now();
+let upstashRateLimit: Ratelimit | null = null;
 
-  const entry = store.get(ip);
+function getUpstashRateLimit() {
+  if (!UPSTASH_ENABLED) return null;
 
-  if (!entry) {
-    store.set(ip, { count: 1, lastRequest: now });
-    return { success: true };
+  upstashRateLimit ??= new Ratelimit({
+    redis: Redis.fromEnv(),
+    limiter: Ratelimit.slidingWindow(MAX_REQUESTS, "1 m"),
+    analytics: true,
+    prefix: "contact-form",
+  });
+
+  return upstashRateLimit;
+}
+
+export async function rateLimit(identifier: string) {
+  const upstash = getUpstashRateLimit();
+
+  if (upstash) {
+    const result = await upstash.limit(identifier);
+    return {
+      success: result.success,
+      remaining: result.remaining,
+      reset: result.reset,
+    };
   }
 
-  if (now - entry.lastRequest > WINDOW) {
-    store.set(ip, { count: 1, lastRequest: now });
-    return { success: true };
+  const now = Date.now();
+  const resetAt = now + WINDOW;
+
+  const entry = store.get(identifier);
+
+  if (!entry) {
+    store.set(identifier, { count: 1, resetAt });
+    return { success: true, remaining: MAX_REQUESTS - 1, reset: resetAt };
+  }
+
+  if (now > entry.resetAt) {
+    store.set(identifier, { count: 1, resetAt });
+    return { success: true, remaining: MAX_REQUESTS - 1, reset: resetAt };
   }
 
   if (entry.count >= MAX_REQUESTS) {
-    return { success: false };
+    return { success: false, remaining: 0, reset: entry.resetAt };
   }
 
   entry.count++;
-  store.set(ip, entry);
+  store.set(identifier, entry);
 
-  return { success: true };
+  return {
+    success: true,
+    remaining: MAX_REQUESTS - entry.count,
+    reset: entry.resetAt,
+  };
 }

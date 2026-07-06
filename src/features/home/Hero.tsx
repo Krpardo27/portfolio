@@ -1,14 +1,14 @@
 "use client";
 
-import Heading from "@/src/shared/components/ui/Heading";
+import Heading from "@/shared/components/ui/Heading";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="section-container">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 w-full max-w-7xl items-center py-24">
+    <section className="w-full max-w-7xl mx-auto px-4 pt-24 pb-8 sm:px-6 md:pt-28 md:pb-12 lg:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 w-full max-w-7xl items-center">
         <motion.div
           initial="hidden"
           animate="visible"

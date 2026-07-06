@@ -1,32 +1,36 @@
-import { ContactEmail } from "@/src/shared/emails/ContactEmail";
-import { getResend } from "@/src/shared/lib/resend";
+import { sendContactEmail } from "@/features/contact/lib/send-contact-email";
 
 export async function POST(req: Request) {
   try {
+    const contentLength = Number(req.headers.get("content-length") || 0);
+
+    if (contentLength > 10_000) {
+      return Response.json(
+        { success: false, errors: [{ message: "Solicitud demasiado grande" }] },
+        { status: 413 },
+      );
+    }
+
     const body = await req.json();
-    const { name, email, message } = body;
+    const identifier =
+      req.headers.get("x-forwarded-for")?.split(",").at(0)?.trim() ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
+    const result = await sendContactEmail(body, identifier);
 
-    if (!name || !email || !message) {
-      return Response.json({ error: "Missing fields" }, { status: 400 });
+    if (!result.success) {
+      return Response.json(
+        { success: false, errors: result.errors },
+        { status: result.status },
+      );
     }
 
-    const resend = getResend();
-
-    const { error } = await resend.emails.send({
-      from: process.env.EMAIL_FROM!,
-      to: ["kpardoveas@gmail.com"],
-      subject: `Nuevo mensaje de ${name}`,
-      react: ContactEmail({ name, email, message }),
-    });
-
-    if (error) {
-      console.error(error);
-      return Response.json({ error }, { status: 500 });
-    }
-
-    return Response.json({ ok: true });
-  } catch (err) {
-    console.error(err);
-    return Response.json({ error: "Error enviando correo" }, { status: 500 });
+    return Response.json({ success: true, message: result.message });
+  } catch (error) {
+    console.error("Contact API error:", error);
+    return Response.json(
+      { success: false, errors: [{ message: "Solicitud inválida" }] },
+      { status: 400 },
+    );
   }
 }

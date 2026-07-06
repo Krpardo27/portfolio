@@ -1,7 +1,5 @@
-import { experienceData } from "../../../src/features/experience/data";
-import { ExperienceTimeline } from "../../../src/features/experience/components/ExperienceTimeline";
-import Heading from "@/src/shared/components/ui/Heading";
-console.log(experienceData);
+import { ExperienceTimeline } from "@/features/experience/components/ExperienceTimeline";
+import Heading from "@/shared/components/ui/Heading";
 
 export default function ExperiencePage() {
   return (

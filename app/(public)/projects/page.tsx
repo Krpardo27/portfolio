@@ -1,6 +1,6 @@
-import Heading from "@/src/shared/components/ui/Heading";
-import { getProjects } from "../../../src/features/projects/data/projects";
-import Projects from "@/src/features/projects/components/Projects";
+import Projects from "@/features/projects/components/Projects";
+import { getProjects } from "@/features/projects/data/projects";
+import Heading from "@/shared/components/ui/Heading";
 
 export default async function ProjectsPage() {
   const projects = await getProjects();

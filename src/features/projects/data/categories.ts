@@ -14,6 +14,11 @@ export const projectCategories = [
     label: "Landings",
     slug: "landings",
   },
+  {
+    id: "fullstack",
+    label: "Fullstack",
+    slug: "fullstack",
+  },
   // {
   //   id: "pages",
   //   label: "Páginas",

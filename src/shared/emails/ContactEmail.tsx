@@ -3,10 +3,11 @@ import { BaseEmail } from "./layout/BaseEmail";
 type Props = {
   name: string;
   email: string;
+  phone: string;
   message: string;
 };
 
-export function ContactEmail({ name, email, message }: Props) {
+export function ContactEmail({ name, email, phone, message }: Props) {
   return (
     <BaseEmail>
       <h3>Nuevo mensaje de contacto</h3>
@@ -16,6 +17,9 @@ export function ContactEmail({ name, email, message }: Props) {
       </p>
       <p>
         <strong>Email:</strong> {email}
+      </p>
+      <p>
+        <strong>Teléfono:</strong> +56 9 {phone}
       </p>
 
       <div

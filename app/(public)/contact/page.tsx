@@ -1,7 +1,8 @@
-"use client"; // Asegúrate de tener esto si usas motion aquí
+"use client"; 
 
-import ContactForm from "@/src/features/contact/components/ContactForm";
-import Heading from "@/src/shared/components/ui/Heading";
+
+import ContactForm from "@/features/contact/components/ContactForm";
+import Heading from "@/shared/components/ui/Heading";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function ContactPage() {

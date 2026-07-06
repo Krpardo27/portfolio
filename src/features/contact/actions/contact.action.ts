@@ -1,83 +1,15 @@
 "use server";
 
-import { rateLimit } from "@/src/shared/lib/rate-limit";
-import { contactFormSchema, ContactInput } from "../schema";
+import { ContactInput } from "../schema";
 import { headers } from "next/headers";
-import { ContactEmail } from "@/src/shared/emails/ContactEmail";
-import { getResend } from "@/src/shared/lib/resend";
+import { sendContactEmail } from "../lib/send-contact-email";
 
 export async function sendContactForm(data: ContactInput) {
-  // 1. Validación
-  const result = contactFormSchema.safeParse(data);
-
-  if (!result.success) {
-    return {
-      success: false,
-      errors: result.error.issues,
-    };
-  }
-
-  const { name, email, message } = result.data;
-
-  // 2. Headers
   const headersList = await headers();
-
-  const ip =
-    headersList.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+  const identifier =
+    headersList.get("x-forwarded-for")?.split(",").at(0)?.trim() ||
     headersList.get("x-real-ip") ||
-    crypto.randomUUID();
+    "unknown";
 
-  // 3. Rate limit
-  const limit = rateLimit(ip || crypto.randomUUID());
-
-  if (!limit.success) {
-    return {
-      success: false,
-      errors: [{ message: "Demasiadas solicitudes. Intenta más tarde." }],
-    };
-  }
-
-  // 4. Email
-  try {
-    const resend = getResend();
-
-    const from = process.env.EMAIL_FROM;
-    if (!from) {
-      throw new Error("Missing EMAIL_FROM");
-    }
-
-    const { error } = await resend.emails.send({
-      from,
-      to: ["kpardoveas@gmail.com"],
-      replyTo: email,
-      subject: `Nuevo mensaje de ${name}`,
-      react: ContactEmail({ name, email, message }),
-    });
-
-    if (error) {
-      const message =
-        typeof error === "object" && error && "message" in error
-          ? (error as { message?: string }).message || "Error enviando correo"
-          : "Error enviando correo";
-
-      console.error("❌ Resend error:", error);
-      return {
-        success: false,
-        errors: [{ message }],
-      };
-    }
-
-    return {
-      success: true,
-      errors: [],
-      message: "Mensaje enviado correctamente 🚀",
-    };
-  } catch (err) {
-    const message = err instanceof Error ? err.message : "Error interno del servidor";
-    console.error("❌ Server error:", message, err);
-    return {
-      success: false,
-      errors: [{ message }],
-    };
-  }
+  return sendContactEmail(data, identifier);
 }
