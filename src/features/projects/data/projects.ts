@@ -150,7 +150,7 @@ export async function getProjects(): Promise<Project[]> {
         },
       ],
 
-      demo: "https://barber-app-chi-two.vercel.app/",
+      demo: "https://barber-app-demo.kevcodesdev.cl/",
     },
   ];
 }
