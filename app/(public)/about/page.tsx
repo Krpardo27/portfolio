@@ -1,5 +1,30 @@
 import { EducationTimeline } from "@/features/about/components/EducationTimeline";
 import Heading from "@/shared/components/ui/Heading";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Acerca de mi",
+  description:
+    "Conoce a Kevin Pardo, Frontend Developer enfocado en React, JavaScript, interfaces accesibles, rendimiento web y desarrollo de experiencias digitales modernas.",
+  keywords: [
+    "Kevin Pardo",
+    "acerca de Kevin Pardo",
+    "Frontend Developer React",
+    "desarrollador frontend Chile",
+    "JavaScript",
+    "Next.js",
+    "experiencia frontend",
+  ],
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "Acerca de mi | Kevin Pardo",
+    description:
+      "Conoce a Kevin Pardo, Frontend Developer enfocado en React, JavaScript, interfaces accesibles, rendimiento web y experiencias digitales modernas.",
+    url: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (

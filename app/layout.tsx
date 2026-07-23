@@ -3,7 +3,61 @@ import "./globals.css";
 import { Footer } from "@/shared/components/layout/Footer";
 import { NavMobile } from "@/shared/components/layout/NavMobile";
 import ToastNotification from "@/shared/components/ui/ToastNotification";
+import type { Metadata } from "next";
 
+const siteUrl = "https://portfolio-kpardo.kevcodesdev.cl";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  applicationName: "Portfolio Kevin Pardo",
+  title: {
+    default: "Kevin Pardo | Frontend Developer",
+    template: "%s | Kevin Pardo",
+  },
+  description:
+    "Portfolio profesional de Kevin Pardo, Frontend Developer especializado en React, Next.js, JavaScript y experiencias web modernas.",
+  keywords: [
+    "Kevin Pardo",
+    "Frontend Developer",
+    "React",
+    "Next.js",
+    "JavaScript",
+    "TypeScript",
+    "portfolio desarrollador",
+  ],
+  authors: [{ name: "Kevin Pardo", url: siteUrl }],
+  creator: "Kevin Pardo",
+  publisher: "Kevin Pardo",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_CL",
+    url: siteUrl,
+    siteName: "Portfolio Kevin Pardo",
+    title: "Kevin Pardo | Frontend Developer",
+    description:
+      "Portfolio profesional de Kevin Pardo, Frontend Developer especializado en React, Next.js, JavaScript y experiencias web modernas.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Kevin Pardo | Frontend Developer",
+    description:
+      "Portfolio profesional de Kevin Pardo, Frontend Developer especializado en React, Next.js, JavaScript y experiencias web modernas.",
+  },
+};
 
 export default function RootLayout({
   children,
