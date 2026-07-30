@@ -57,6 +57,9 @@ export const metadata: Metadata = {
     description:
       "Portfolio profesional de Kevin Pardo, Frontend Developer especializado en React, Next.js, JavaScript y experiencias web modernas.",
   },
+  verification: {
+    google: "KtKl5OY2v0mvHK87eXJxDyAlF0ffBMz2eEJi1G6akdo",
+  },
 };
 
 export default function RootLayout({

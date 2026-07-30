@@ -4,9 +4,9 @@ export const services = [
     title: "Landing pages de alto impacto",
     description:
       "Sitios rápidos y responsive para restaurantes, marcas personales o productos que necesitan verse profesionales y convertir visitas en contactos.",
-    highlights: ["Diseño UI responsive", "Animaciones cuidadas", "Optimización de performance"],
+    highlights: ["Diseño UI responsive", "Animaciones", "Optimización de performance"],
     includes: [
-      "Estructura orientada a una acción clara: reserva, contacto, compra o consulta.",
+      "Estructura orientada a una acción clara: reserva, contacto o consulta.",
       "Secciones clave como hero, beneficios, servicios, testimonios, ubicación y llamada final.",
       "Preparación para SEO básico, carga rápida y buena visualización en mobile.",
     ],
