@@ -23,8 +23,9 @@ export function ServicesSection({
 
   return (
     <section
-      className={`w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${compactTop ? "pt-8 pb-16" : "py-24"
-        }`}
+      className={`w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${
+        compactTop ? "pt-8 pb-16" : "py-24"
+      }`}
     >
       {showIntro && (
         <motion.header
@@ -102,7 +103,7 @@ export function ServicesSection({
                   </li>
                 ))}
               </ul>
-              
+
               <div className="mt-6 border-t border-white/10 pt-4 text-xs font-medium uppercase tracking-wide text-blue-300/80" />
 
               {!isCompact && (
@@ -113,7 +114,6 @@ export function ServicesSection({
                   viewport={{ once: true }}
                   className="mt-6 rounded-xl border border-white/10 bg-slate-950/45 p-4"
                 >
-
                   <h3 className="text-sm font-semibold text-white">Incluye</h3>
                   <ul className="mt-3 space-y-2.5">
                     {service.includes.map((item) => (
@@ -163,7 +163,7 @@ export function ServicesSection({
         >
           <div>
             <Heading level={2} className="text-white">
-              Cómo trabajo un proyecto
+              Así trabajo, paso a paso
             </Heading>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {serviceProcess.map((step, index) => (
@@ -177,9 +177,9 @@ export function ServicesSection({
                     ease: "easeOut",
                   }}
                   viewport={{ once: true }}
-                  className="flex gap-3 rounded-xl bg-white/[0.03] p-4 text-sm text-slate-300"
+                  className="flex gap-3 rounded-xl bg-white/[0.04] p-4 text-base text-slate-300"
                 >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-500/15 text-xs font-semibold text-blue-300">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/[0.06] text-xs font-semibold text-slate-400">
                     {index + 1}
                   </span>
                   <p>{step}</p>
@@ -187,18 +187,19 @@ export function ServicesSection({
               ))}
             </div>
           </div>
-
-          <div className="flex flex-col justify-between rounded-xl border border-blue-400/20 bg-blue-500/10 p-5">
-            <p className="text-sm leading-6 text-slate-300">
-              Si tienes una idea, una web que necesita mejorar o una herramienta
-              interna pendiente, puedo ayudarte a bajarla a una solución
-              concreta.
+          <div className="flex flex-col justify-between rounded-xl border border-blue-400/20 bg-blue-500/10 p-5 md:mt-0 mt-2">
+            <p className="text-base leading-6 text-slate-300">
+              Cuéntame qué necesitas y veamos la mejor forma de hacerlo
+              realidad. Ya sea una página web, una plataforma a medida o la
+              automatización de un proceso que hoy haces manualmente, mi
+              objetivo es entregarte una solución que realmente aporte valor a
+              tu negocio.
             </p>
             <Link
               href="/contact"
               className="mt-6 inline-flex items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-500"
             >
-              Hablemos de tu proyecto
+              Conversemos tu proyecto
             </Link>
           </div>
         </motion.div>
