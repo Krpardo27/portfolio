@@ -23,9 +23,8 @@ export function ServicesSection({
 
   return (
     <section
-      className={`w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${
-        compactTop ? "pt-8 pb-16" : "py-24"
-      }`}
+      className={`w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${compactTop ? "pt-8 pb-16" : "py-24"
+        }`}
     >
       {showIntro && (
         <motion.header
@@ -88,7 +87,9 @@ export function ServicesSection({
                 <Icon size={22} />
               </motion.div>
 
-              <h2 className="text-xl font-semibold text-white">{service.title}</h2>
+              <h2 className="text-xl font-semibold text-white">
+                {service.title}
+              </h2>
               <p className="mt-3 text-sm leading-6 text-slate-400">
                 {service.description}
               </p>
@@ -101,6 +102,8 @@ export function ServicesSection({
                   </li>
                 ))}
               </ul>
+              
+              <div className="mt-6 border-t border-white/10 pt-4 text-xs font-medium uppercase tracking-wide text-blue-300/80" />
 
               {!isCompact && (
                 <motion.div
@@ -110,10 +113,14 @@ export function ServicesSection({
                   viewport={{ once: true }}
                   className="mt-6 rounded-xl border border-white/10 bg-slate-950/45 p-4"
                 >
+
                   <h3 className="text-sm font-semibold text-white">Incluye</h3>
                   <ul className="mt-3 space-y-2.5">
                     {service.includes.map((item) => (
-                      <li key={item} className="flex gap-3 text-sm leading-6 text-slate-300">
+                      <li
+                        key={item}
+                        className="flex gap-3 text-sm leading-6 text-slate-300"
+                      >
                         <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-blue-300" />
                         <span>{item}</span>
                       </li>
@@ -124,10 +131,6 @@ export function ServicesSection({
                   </p>
                 </motion.div>
               )}
-
-              <p className="mt-6 border-t border-white/10 pt-4 text-xs font-medium uppercase tracking-wide text-blue-300/80">
-                {service.proof}
-              </p>
             </motion.article>
           );
         })}
@@ -168,7 +171,11 @@ export function ServicesSection({
                   key={step}
                   initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.08, ease: "easeOut" }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.08,
+                    ease: "easeOut",
+                  }}
                   viewport={{ once: true }}
                   className="flex gap-3 rounded-xl bg-white/[0.03] p-4 text-sm text-slate-300"
                 >
@@ -183,7 +190,9 @@ export function ServicesSection({
 
           <div className="flex flex-col justify-between rounded-xl border border-blue-400/20 bg-blue-500/10 p-5">
             <p className="text-sm leading-6 text-slate-300">
-              Si tienes una idea, una web que necesita mejorar o una herramienta interna pendiente, puedo ayudarte a bajarla a una solución concreta.
+              Si tienes una idea, una web que necesita mejorar o una herramienta
+              interna pendiente, puedo ayudarte a bajarla a una solución
+              concreta.
             </p>
             <Link
               href="/contact"

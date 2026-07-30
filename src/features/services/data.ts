@@ -12,7 +12,6 @@ export const services = [
     ],
     outcome:
       "Una página lista para compartir, lanzar campañas o presentar una propuesta con mejor percepción profesional.",
-    proof: "Ideal para validar una marca, campaña o servicio con presencia profesional",
   },
   {
     id: "frontend-apps",
@@ -27,7 +26,6 @@ export const services = [
     ],
     outcome:
       "Una interfaz ordenada, escalable y preparada para seguir creciendo sin volverse difícil de mantener.",
-    proof: "Pensado para productos que necesitan una experiencia clara, rápida y mantenible",
   },
   {
     id: "admin-panels",
@@ -42,7 +40,6 @@ export const services = [
     ],
     outcome:
       "Una herramienta interna que reduce tareas manuales y centraliza la gestión del negocio.",
-    proof: "Orientado a negocios que necesitan ordenar procesos y gestionar datos internos",
   },
 ];
 
