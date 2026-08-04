@@ -44,7 +44,7 @@ export const services = [
 ];
 
 export const serviceProcess = [
-  "Revisión del objetivo y alcance real del proyecto.",
+  "Revisión y alcance real del proyecto.",
   "Diseño de estructura, interfaz y flujo principal.",
   "Desarrollo, pruebas responsive y ajustes de performance.",
   "Entrega preparada para despliegue y futuras mejoras.",
