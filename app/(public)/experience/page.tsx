@@ -3,17 +3,27 @@ import Heading from "@/shared/components/ui/Heading";
 
 export default function ExperiencePage() {
   return (
-    <section className="section-container w-full max-w-7xl flex flex-col items-center py-24">
-      <header className="text-center mb-16 px-4">
-        <Heading level={1}>
-          Experiencia <span className="text-blue-500">Laboral</span>
-        </Heading>
-        <div className="w-16 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.5)]" />
-        <p className="text-slate-400 mt-6 max-w-xl mx-auto text-lg">
-          Trayectoria profesional en desarrollo web y tecnologías relacionadas.
+    <section className="mx-auto w-full max-w-6xl px-5 pb-20 pt-28 sm:px-8 md:pb-28 md:pt-32">
+      <header className="max-w-2xl">
+        <div className="mb-6 flex items-center gap-3">
+          <span className="h-px w-8 bg-blue-500" />
+
+          <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
+            Trayectoria
+          </span>
+        </div>
+
+        <Heading level={1}>Experiencia</Heading>
+
+        <p className="mt-6 max-w-xl text-base leading-7 text-slate-500 sm:text-lg">
+          Mi trayectoria profesional en desarrollo web, trabajando con
+          diferentes tecnologías y proyectos digitales.
         </p>
       </header>
-      <ExperienceTimeline />
+
+      <div className="mt-20 border-t border-white/10 pt-12 md:mt-24 md:pt-16">
+        <ExperienceTimeline />
+      </div>
     </section>
   );
 }

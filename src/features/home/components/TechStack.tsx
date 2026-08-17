@@ -1,9 +1,8 @@
 "use client";
 
-import Heading from "@/shared/components/ui/Heading";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import Heading from "@/shared/components/ui/Heading";
 import type { IconType } from "react-icons";
 import { FiCode } from "react-icons/fi";
 import {
@@ -32,7 +31,6 @@ type StackItem = {
   name: string;
   icon?: IconType;
   iconSrc?: string;
-  brandColor?: string;
 };
 
 type StackCategory = {
@@ -45,35 +43,35 @@ const stackByCategory: StackCategory[] = [
     title: "Frontend",
     items: [
       { name: "Next.js", icon: SiNextdotjs },
-      { name: "React", icon: SiReact, brandColor: "#61DAFB" },
-      { name: "TypeScript", icon: SiTypescript, brandColor: "#3178C6" },
-      { name: "Tailwind CSS", icon: SiTailwindcss, brandColor: "#06B6D4" },
-      { name: "Framer Motion", icon: SiFramer, brandColor: "#0055FF" },
-      { name: "TanStack Query", icon: SiReactquery, brandColor: "#FF4154" },
-      { name: "Zustand", icon: FiCode, brandColor: "#A1856E" },
-      { name: "React Hook Form", icon: FiCode, brandColor: "#EC5990" },
-      { name: "Zod", icon: SiZod, brandColor: "#3E67B1" },
+      { name: "React", icon: SiReact },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Framer Motion", icon: SiFramer },
+      { name: "TanStack Query", icon: SiReactquery },
+      { name: "Zustand", icon: FiCode },
+      { name: "React Hook Form", icon: FiCode },
+      { name: "Zod", icon: SiZod },
     ],
   },
   {
     title: "Backend y Datos",
     items: [
-      { name: "Prisma", icon: SiPrisma, brandColor: "#2D3748" },
-      { name: "Better Auth", icon: FiCode, brandColor: "#6366F1" },
-      { name: "PostgreSQL", icon: SiPostgresql, brandColor: "#336791" },
-      { name: "MongoDB", icon: SiMongodb, brandColor: "#47A248" },
-      { name: "Neon", iconSrc: "/neon-logo.svg", brandColor: "#00E699" },
-      { name: "Resend", icon: SiResend, brandColor: "#9CA3AF" },
+      { name: "Prisma", icon: SiPrisma },
+      { name: "Better Auth", icon: FiCode },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "Neon", iconSrc: "/neon-logo.svg" },
+      { name: "Resend", icon: SiResend },
     ],
   },
   {
     title: "Infra y Deploy",
     items: [
-      { name: "Docker", icon: SiDocker, brandColor: "#2496ED" },
-      { name: "Git", icon: SiGit, brandColor: "#F05032" },
-      { name: "GitHub", icon: SiGithub, brandColor: "#111827" },
-      { name: "Vercel", icon: SiVercel, brandColor: "#000000" },
-      { name: "Cloudinary", icon: SiCloudinary, brandColor: "#3448C5" },
+      { name: "Docker", icon: SiDocker },
+      { name: "Git", icon: SiGit },
+      { name: "GitHub", icon: SiGithub },
+      { name: "Vercel", icon: SiVercel },
+      { name: "Cloudinary", icon: SiCloudinary },
     ],
   },
   {
@@ -82,35 +80,33 @@ const stackByCategory: StackCategory[] = [
       {
         name: "Google Search Console",
         icon: SiGooglesearchconsole,
-        brandColor: "#4285F4",
       },
       {
         name: "Google Analytics",
         icon: SiGoogleanalytics,
-        brandColor: "#E37400",
       },
-      { name: "Google Search Platform", icon: SiGoogle, brandColor: "#4285F4" },
-      { name: "Google OAuth", icon: SiGoogle, brandColor: "#4285F4" },
+      {
+        name: "Google Search",
+        icon: SiGoogle,
+      },
+      {
+        name: "Google OAuth",
+        icon: SiGoogle,
+      },
     ],
   },
 ];
 
-const categoryAccentStyles: Record<string, string> = {
-  Frontend: "from-cyan-400/35 to-blue-400/25",
-  "Backend y Datos": "from-emerald-400/35 to-teal-400/20",
-  "Infra y Deploy": "from-orange-400/35 to-amber-400/20",
-  "SEO y Analytics": "from-fuchsia-400/30 to-pink-400/20",
-};
-
 function StackIcon({ icon, iconSrc, name }: StackItem) {
   if (iconSrc) {
     return (
-      <span
-        aria-hidden="true"
-        className="inline-flex h-4 w-4 items-center justify-center"
-      >
-        <Image src={iconSrc} alt="" width={16} height={16} className="h-4 w-4" />
-      </span>
+      <Image
+        src={iconSrc}
+        alt=""
+        width={18}
+        height={18}
+        className="h-[18px] w-[18px] object-contain"
+      />
     );
   }
 
@@ -120,109 +116,87 @@ function StackIcon({ icon, iconSrc, name }: StackItem) {
     return (
       <span
         aria-hidden="true"
-        className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-slate-700 text-[10px] font-semibold text-slate-200"
+        className="flex h-[18px] w-[18px] items-center justify-center font-mono text-xs text-slate-500"
       >
-        {name.slice(0, 1)}
+        {name.charAt(0)}
       </span>
     );
   }
 
-  return <Icon aria-hidden="true" className="h-4 w-4 text-current" />;
+  return <Icon aria-hidden="true" className="h-[18px] w-[18px]" />;
 }
 
 export function TechStack() {
-  const [activeChip, setActiveChip] = useState<string | null>(null);
-
   return (
-    <section className="section-container pt-6 md:pt-8">
+    <section className="section-container lg:py-20 py-5">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.45 }}
-        className="rounded-2xl border border-slate-700/60 bg-slate-900/55 backdrop-blur-sm p-5 md:p-7"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.5 }}
       >
-        <div className="flex flex-col gap-3">
-          <span className="text-xs uppercase tracking-[0.22em] text-blue-300/90">
-            Stack principal
-          </span>
-          <Heading level={2} className="text-white">
-            Tecnologías con las que trabajo
-          </Heading>
-        </div>
+        {/* Header */}
+        <header className="mb-12 max-w-3xl">
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-8 bg-blue-500" />
 
-        <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-          {stackByCategory.map((category) => (
+            <h2 className="font-bold uppercase tracking-[0.2em]">
+              Stack
+            </h2>
+          </div>
+
+          <Heading level={2}>Tecnologías con las que trabajo.</Heading>
+
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-500">
+            Herramientas que utilizo habitualmente para desarrollar interfaces,
+            aplicaciones web, APIs y sistemas.
+          </p>
+        </header>
+
+        {/* Categories */}
+        <div className="border-t border-white/10">
+          {stackByCategory.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="relative overflow-hidden rounded-xl border border-slate-700/70 bg-slate-900/60 p-4"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 0.4,
+                delay: categoryIndex * 0.05,
+              }}
+              className="grid gap-6 border-b border-white/10 py-8 md:grid-cols-[220px_1fr] md:gap-12 md:py-10"
             >
-              <div
-                aria-hidden="true"
-                className={`pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r ${categoryAccentStyles[category.title] ?? "from-blue-400/30 to-indigo-400/20"}`}
-              />
-
-              <div className="flex items-center justify-between gap-3">
-                <h3 className="text-sm font-semibold tracking-wide text-blue-300">
+              {/* Category */}
+              <div>
+                <h3 className="text-sm font-medium text-white">
                   {category.title}
                 </h3>
+
+                <span className="mt-1 block font-mono text-xs text-slate-600">
+                  {String(category.items.length).padStart(2, "0")} tecnologías
+                </span>
               </div>
 
-              <motion.ul
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={{
-                  hidden: {},
-                  visible: {
-                    transition: {
-                      staggerChildren: 0.025,
-                    },
-                  },
-                }}
-                className="mt-3 flex flex-wrap gap-2.5"
-              >
+              {/* Technologies */}
+              <div className="flex flex-wrap gap-x-7 gap-y-5">
                 {category.items.map((item) => (
-                  <motion.li
+                  <div
                     key={item.name}
-                    variants={{
-                      hidden: { opacity: 0, y: 8, scale: 0.98 },
-                      visible: { opacity: 1, y: 0, scale: 1 },
-                    }}
-                    transition={{ duration: 0.24, ease: "easeOut" }}
-                    whileHover={{
-                      y: -1,
-                    }}
-                    whileTap={{
-                      scale: 0.97,
-                    }}
-                    onHoverStart={() => setActiveChip(item.name)}
-                    onHoverEnd={() => setActiveChip((current) => (current === item.name ? null : current))}
-                    onTapStart={() => setActiveChip(item.name)}
-                    onTapCancel={() => setActiveChip((current) => (current === item.name ? null : current))}
-                    onTap={() => setActiveChip((current) => (current === item.name ? null : current))}
-                    style={
-                      activeChip === item.name
-                        ? {
-                            borderColor: item.brandColor ?? "#60A5FA",
-                            backgroundColor: item.brandColor
-                              ? `${item.brandColor}26`
-                              : "rgba(30, 41, 59, 0.95)",
-                            color: item.brandColor ?? "#E2E8F0",
-                          }
-                        : undefined
-                    }
-                    className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-slate-800/85 px-3 py-1.5 text-xs sm:text-sm text-slate-100 shadow-sm shadow-blue-900/20 transition-[border-color,background-color,color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/70"
+                    className="group flex items-center gap-2.5 text-sm text-slate-500 transition-colors duration-200 hover:text-white"
                   >
-                    <StackIcon name={item.name} icon={item.icon} iconSrc={item.iconSrc} />
+                    <span className="text-slate-600 transition-colors duration-200 group-hover:text-blue-400">
+                      <StackIcon
+                        name={item.name}
+                        icon={item.icon}
+                        iconSrc={item.iconSrc}
+                      />
+                    </span>
+
                     <span>{item.name}</span>
-                  </motion.li>
+                  </div>
                 ))}
-              </motion.ul>
+              </div>
             </motion.div>
           ))}
         </div>

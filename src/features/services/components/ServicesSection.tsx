@@ -2,9 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FiArrowRight, FiCode, FiDatabase, FiLayers } from "react-icons/fi";
+import { FiArrowUpRight, FiCode, FiDatabase, FiLayers } from "react-icons/fi";
 import { serviceProcess, services } from "../data";
-import Heading from "@/shared/components/ui/Heading";
 import type { IconType } from "react-icons";
 
 const serviceIcons: Record<string, IconType> = {
@@ -13,35 +12,10 @@ const serviceIcons: Record<string, IconType> = {
   "admin-panels": FiDatabase,
 };
 
-const serviceStyles: Record<
-  string,
-  { accent: string; iconTone: string; chipTone: string }
-> = {
-  "landing-pages": {
-    accent: "from-cyan-400/40 to-blue-500/10",
-    iconTone: "border-cyan-400/35 bg-cyan-500/10 text-cyan-200",
-    chipTone: "border-cyan-400/25 bg-cyan-500/10 text-cyan-200",
-  },
-  "frontend-apps": {
-    accent: "from-violet-400/35 to-blue-500/10",
-    iconTone: "border-violet-400/35 bg-violet-500/10 text-violet-200",
-    chipTone: "border-violet-400/25 bg-violet-500/10 text-violet-200",
-  },
-  "admin-panels": {
-    accent: "from-emerald-400/35 to-teal-500/10",
-    iconTone: "border-emerald-400/35 bg-emerald-500/10 text-emerald-200",
-    chipTone: "border-emerald-400/25 bg-emerald-500/10 text-emerald-200",
-  },
-};
-
-const cardContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const cardItemVariants = {
-  hidden: { opacity: 0, y: 28, scale: 0.98 },
-  visible: { opacity: 1, y: 0, scale: 1 },
+const serviceNumbers: Record<string, string> = {
+  "landing-pages": "01",
+  "frontend-apps": "02",
+  "admin-panels": "03",
 };
 
 type ServicesSectionProps = {
@@ -59,208 +33,194 @@ export function ServicesSection({
 
   return (
     <section
-      className={`w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${
-        compactTop ? "pt-8 pb-16" : "py-24"
+      className={`mx-auto w-full max-w-6xl px-5 sm:px-8 ${
+        compactTop ? "pt-8 pb-16" : "py-24 lg:py-32"
       }`}
     >
+      {/* Header */}
       {showIntro && (
         <motion.header
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-80px" }}
-          className="mb-14 px-4 text-center"
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-16 max-w-3xl"
         >
-          <span className="inline-flex rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-blue-200">
-            Servicios
-          </span>
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-8 bg-blue-500" />
 
-          <Heading level={isCompact ? 2 : 1}>
-            {isCompact ? "Servicios para " : "Soluciones que puedo "}
-            <span className="text-blue-500">
-              {isCompact ? "tu proyecto" : "construir"}
-            </span>
-          </Heading>
+            <h2 className="font-bold uppercase tracking-[0.2em]">Servicios</h2>
+          </div>
 
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="w-16 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.5)]"
-          />
-
-          <p className="text-slate-400 mt-6 max-w-2xl mx-auto text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
             {isCompact
-              ? "Desarrollo soluciones web claras, rápidas y pensadas para convertir ideas en productos reales."
-              : "Ofrezco desarrollo web frontend y fullstack para negocios que necesitan presencia digital, interfaces claras o herramientas internas listas para crecer."}
+              ? "Desarrollo sitios y aplicaciones web adaptadas a las necesidades de cada proyecto."
+              : "Desde una landing page hasta una aplicación web completa. Desarrollo soluciones enfocadas en rendimiento, usabilidad y una buena experiencia de usuario."}
           </p>
         </motion.header>
       )}
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
-        variants={cardContainerVariants}
-        className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
-      >
-        {services.map((service) => {
+      {/* Services */}
+      <div className="border-t border-white/10">
+        {services.map((service, index) => {
           const Icon = serviceIcons[service.id] ?? FiCode;
-          const style = serviceStyles[service.id] ?? {
-            accent: "from-blue-400/30 to-indigo-500/10",
-            iconTone: "border-blue-400/35 bg-blue-500/10 text-blue-200",
-            chipTone: "border-blue-400/25 bg-blue-500/10 text-blue-200",
-          };
+          const number =
+            serviceNumbers[service.id] ?? String(index + 1).padStart(2, "0");
 
           return (
             <motion.article
               key={service.id}
-              variants={cardItemVariants}
-              transition={{ duration: 0.45, ease: "easeOut" }}
-              whileHover={{ y: -6 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 p-6 shadow-xl shadow-black/25 backdrop-blur-sm transition duration-300 hover:border-blue-300/35"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.45,
+                delay: index * 0.08,
+              }}
+              viewport={{ once: true, margin: "-80px" }}
+              className="group border-b border-white/10"
             >
-              <div
-                aria-hidden="true"
-                className={`pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r ${style.accent}`}
-              />
+              <div className="relative grid gap-8 py-8 md:grid-cols-[80px_1fr_auto] md:items-center md:gap-10 md:py-10">
+                {/* Number */}
+                <span className="font-mono text-sm text-slate-600 transition-colors duration-300 group-hover:text-blue-500">
+                  {number}
+                </span>
 
-              <div className="flex items-start justify-between gap-4">
-                <motion.div
-                  whileHover={{ rotate: -5, scale: 1.08 }}
-                  transition={{ type: "spring", stiffness: 320, damping: 18 }}
-                  className={`mb-5 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border ${style.iconTone}`}
-                >
-                  <Icon size={22} />
-                </motion.div>
-              </div>
+                {/* Main content */}
+                <div className="min-w-0">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center text-slate-500 transition-colors duration-300 group-hover:text-blue-400">
+                      <Icon size={24} strokeWidth={1.5} />
+                    </div>
 
-              <h2 className="text-xl font-semibold text-white">
-                {service.title}
-              </h2>
+                    <h2 className="text-xl font-medium tracking-tight text-white sm:text-2xl">
+                      {service.title}
+                    </h2>
+                  </div>
 
-              <p className="mt-3 text-sm leading-6 text-slate-400">
-                {service.description}
-              </p>
-
-              <ul className="mt-5 flex flex-wrap gap-2">
-                {service.highlights.map((item) => (
-                  <li
-                    key={item}
-                    className={`rounded-full border px-3 py-1 text-xs font-medium ${style.chipTone}`}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-6 border-t border-white/10 pt-4" />
-
-              {!isCompact && (
-                <motion.div
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, ease: "easeOut" }}
-                  viewport={{ once: true }}
-                  className="mt-6 rounded-xl border border-white/10 bg-slate-950/45 p-4"
-                >
-                  <h3 className="text-sm font-semibold text-white">Incluye</h3>
-
-                  <ul className="mt-3 space-y-2.5">
-                    {service.includes.map((item) => (
-                      <li
-                        key={item}
-                        className="flex gap-3 text-sm leading-6 text-slate-300"
-                      >
-                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-blue-300" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <p className="mt-4 border-t border-white/10 pt-4 text-sm leading-6 text-slate-400">
-                    {service.outcome}
+                  <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base">
+                    {service.description}
                   </p>
-                </motion.div>
-              )}
 
-              {isCompact && (
-                <div className="mt-5">
-                  <Link
-                    href="/services"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-300 transition group-hover:text-blue-200"
-                  >
-                    Ver detalle
-                    <FiArrowRight className="h-4 w-4" />
-                  </Link>
+                  {/* Technologies */}
+                  <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                    {service.highlights.map((item) => (
+                      <span
+                        key={item}
+                        className="text-xs font-medium text-slate-500 transition-colors duration-300 group-hover:text-slate-400"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Full variant content */}
+                  {!isCompact && (
+                    <div className="mt-6 max-w-2xl border-l border-white/10 pl-4">
+                      <p className="text-xs uppercase tracking-[0.15em] text-slate-600">
+                        Incluye
+                      </p>
+
+                      <ul className="mt-3 space-y-2">
+                        {service.includes.map((item) => (
+                          <li
+                            key={item}
+                            className="text-sm leading-6 text-slate-500"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <p className="mt-4 text-sm leading-6 text-slate-400">
+                        {service.outcome}
+                      </p>
+                    </div>
+                  )}
                 </div>
-              )}
+              </div>
             </motion.article>
           );
         })}
-      </motion.div>
+      </div>
 
+      {/* Compact CTA */}
       {isCompact && (
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.15, ease: "easeOut" }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.45, delay: 0.15 }}
           viewport={{ once: true }}
-          className="mt-10 flex justify-center"
+          className="mt-8"
         >
           <Link
             href="/services"
-            className="inline-flex items-center justify-center rounded-xl border border-blue-400/30 px-5 py-3 text-sm font-medium text-blue-300 transition hover:bg-blue-500/10 hover:text-blue-200"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition-colors hover:text-white"
           >
-            Ver servicios en detalle
+            Ver todos los servicios
+            <FiArrowUpRight
+              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              size={16}
+            />
           </Link>
         </motion.div>
       )}
 
+      {/* Process */}
       {!isCompact && (
-        <motion.div
-          initial={{ opacity: 0, y: 36 }}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-10 grid gap-6 rounded-2xl border border-white/10 bg-slate-950/50 p-6 md:grid-cols-[1.15fr_0.85fr] md:p-8"
+          className="mt-24 pt-10 lg:mt-32 lg:pt-12"
         >
-          <div>
-            <h3 className="text-xl font-semibold text-white">
-              Proceso de trabajo
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
-              Trabajo en pasos cortos y claros, con revisiones periódicas y
-              entregas parciales para asegurar que el proyecto avance de manera
-              ordenada y cumpla con tus expectativas.
-            </p>
-          </div>
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+            {/* Process intro */}
+            <div>
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-6 bg-blue-500" />
 
-          <div className="space-y-4">
-            <div className="grid gap-3 sm:grid-cols-2">
+                <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-600">
+                  Proceso
+                </span>
+              </div>
+
+              <h3 className="text-2xl font-medium tracking-tight text-white sm:text-3xl">
+                Una forma simple de trabajar.
+              </h3>
+
+              <p className="mt-4 max-w-md text-sm leading-6 text-slate-500">
+                Mantengo el proceso claro desde el principio, con avances
+                concretos y comunicación durante todo el desarrollo.
+              </p>
+            </div>
+
+            {/* Process steps */}
+            <div className="divide-y divide-white/10 border-y border-white/10">
               {serviceProcess.map((step, index) => (
                 <motion.div
                   key={step}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: 12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   transition={{
                     duration: 0.4,
-                    delay: index * 0.08,
-                    ease: "easeOut",
+                    delay: index * 0.06,
                   }}
                   viewport={{ once: true }}
-                  className="flex gap-3 rounded-xl border border-white/10 bg-white/4 p-4 text-base text-slate-300"
+                  className="group flex items-start gap-5 py-5"
                 >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-blue-300/30 bg-blue-500/10 text-xs font-semibold text-blue-200">
-                    {index + 1}
+                  <span className="font-mono text-xs text-slate-600 transition-colors group-hover:text-blue-500">
+                    {String(index + 1).padStart(2, "0")}
                   </span>
-                  <p>{step}</p>
+
+                  <p className="text-sm leading-6 text-slate-400 transition-colors group-hover:text-slate-300">
+                    {step}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </div>
-        </motion.div>
+        </motion.section>
       )}
     </section>
   );

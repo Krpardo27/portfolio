@@ -7,155 +7,167 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 pt-24 pb-8 sm:px-6 md:pt-28 md:pb-12 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 w-full max-w-7xl items-center">
+    <section className="mx-auto w-full max-w-6xl px-5 pb-8 pt-24 sm:px-8 md:pt-32">
+      <div className="grid items-center gap-16 md:grid-cols-[1.1fr_0.9fr] md:gap-12 lg:gap-20">
+        {/* Content */}
         <motion.div
           initial="hidden"
           animate="visible"
           variants={{
+            hidden: {},
             visible: {
               transition: {
-                staggerChildren: 0.15,
+                staggerChildren: 0.08,
               },
             },
           }}
-          className="flex flex-col gap-6 text-center md:text-left"
+          className="max-w-2xl"
         >
-          <motion.span
+          {/* Availability */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 12 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            className="mb-7 flex items-center gap-3"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            </span>
+
+            <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
+              Disponible para proyectos freelance
+            </span>
+          </motion.div>
+
+          {/* Name */}
+          <motion.div
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
             }}
-            className="text-sm text-blue-400 font-medium tracking-wide"
           >
-            Disponible para proyectos freelance
-          </motion.span>
-
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            className="text-4xl md:text-6xl font-bold leading-tight tracking-tight"
-          >
-            <Heading level={1}>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
-                Kevin Pardo
-              </span>
-            </Heading>
+            <Heading level={1}>Kevin Pardo</Heading>
           </motion.div>
 
+          {/* Role */}
           <motion.h2
             variants={{
-              hidden: { opacity: 0, y: 30 },
+              hidden: { opacity: 0, y: 16 },
               visible: { opacity: 1, y: 0 },
             }}
-            className="text-lg md:text-xl text-slate-300 font-medium"
+            className="mt-5 text-xl font-medium tracking-tight text-slate-300 sm:text-2xl"
           >
-            Frontend Developer especializado en React & Next.js
+            Frontend Developer
+            <span className="text-slate-600"> · </span>
+            React & Next.js
           </motion.h2>
 
+          {/* Description */}
           <motion.p
             variants={{
-              hidden: { opacity: 0, y: 30 },
+              hidden: { opacity: 0, y: 16 },
               visible: { opacity: 1, y: 0 },
             }}
-            className="text-slate-400 leading-relaxed max-w-lg mx-auto md:mx-0"
+            className="mt-6 max-w-xl text-base leading-7 text-slate-500 sm:text-lg"
           >
-            Construyo interfaces modernas, optimizadas y escalables con foco en
-            performance, UX y buenas prácticas de desarrollo.
+            Desarrollo interfaces y aplicaciones web enfocadas en rendimiento,
+            experiencia de usuario y código mantenible.
           </motion.p>
 
+          {/* Actions */}
           <motion.div
             variants={{
-              hidden: { opacity: 0, y: 30 },
+              hidden: { opacity: 0, y: 16 },
               visible: { opacity: 1, y: 0 },
             }}
-            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-4"
+            className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4"
           >
             <Link
               href="/projects"
-              className="
-                px-6 py-3 rounded-xl 
-                bg-gradient-to-r from-blue-600 to-indigo-600 
-                hover:from-blue-500 hover:to-indigo-500 
-                text-white font-medium 
-                shadow-lg shadow-blue-900/30
-                transition-all duration-300
-                hover:scale-[1.03]
-              "
+              className="group inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-blue-400"
             >
               Ver proyectos
+              <span
+                aria-hidden="true"
+                className="text-slate-600 transition-transform duration-200 group-hover:translate-x-1 group-hover:text-blue-400"
+              >
+                →
+              </span>
             </Link>
 
             <Link
               href="/contact"
-              className="
-                px-6 py-3 rounded-xl 
-                border border-slate-600 
-                hover:border-blue-400 
-                text-white 
-                transition-all duration-300
-                hover:bg-slate-800
-              "
+              className="text-sm font-medium text-slate-500 transition-colors hover:text-white"
             >
               Contacto
             </Link>
+
             <a
               href="/CV-Kevin-Pardo.pdf"
               download="CV-Kevin-Pardo.pdf"
-              className="
-    px-6 py-3 rounded-xl 
-    border border-blue-500/30
-    hover:bg-blue-500/10
-    text-blue-400 hover:text-blue-300
-    font-medium 
-    transition-all duration-300
-    hover:scale-[1.03]
-    flex items-center justify-center gap-2
-  "
+              className="text-sm font-medium text-slate-500 transition-colors hover:text-white"
             >
               Descargar CV
             </a>
           </motion.div>
         </motion.div>
 
-        {/* IMAGEN */}
+        {/* Image */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 40 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="justify-center relative hidden md:flex"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+          className="relative hidden justify-center md:flex md:justify-end"
         >
-          {/* Glow */}
-          <div className="absolute w-52 h-52 md:w-[420px] md:h-[420px] bg-blue-500/20 blur-3xl rounded-full" />
-
-          {/* Imagen */}
-          <div
-            className="
-              relative 
-              w-[220px] h-[220px]
-              sm:w-[260px] sm:h-[260px]
-              md:w-[320px] md:h-[320px]
-              lg:w-[380px] lg:h-[380px]
-              xl:w-[440px] xl:h-[440px]
-              rounded-3xl overflow-hidden 
-              border border-white/10 
-              bg-slate-900
-              shadow-xl shadow-black/40
-              transition-all duration-500
-              hover:scale-[1.03]
-            "
-          >
-            <Image
-              src="https://res.cloudinary.com/kpardo-cloud/image/upload/v1775785552/portfolio/perfil_flmc7z.jpg"
-              alt="Kevin Pardo"
-              fill
-              className="object-cover"
+          <div className="relative">
+            {/* Decorative line */}
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-5 -left-5 h-px w-24 bg-blue-500"
             />
+
+            <div
+              aria-hidden="true"
+              className="absolute -right-5 -top-5 h-24 w-px bg-white/10"
+            />
+
+            {/* Image */}
+            <div className="relative h-[320px] w-[280px] overflow-hidden bg-slate-900 sm:h-[380px] sm:w-[330px] lg:h-[440px] lg:w-[380px]">
+              <Image
+                src="https://res.cloudinary.com/kpardo-cloud/image/upload/v1775785552/portfolio/perfil_flmc7z.jpg"
+                alt="Kevin Pardo"
+                fill
+                priority
+                className="object-cover grayscale-[15%] transition-all duration-500 hover:grayscale-0"
+                sizes="(max-width: 1024px) 330px, 380px"
+              />
+            </div>
+
+            {/* Image caption */}
+            <div className="absolute -bottom-8 right-0 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-600">
+              Santiago, Chile
+            </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Bottom divider */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{
+          duration: 0.7,
+          delay: 0.5,
+          ease: "easeOut",
+        }}
+        className="mt-24 origin-left border-t border-white/10"
+      />
     </section>
   );
 }
