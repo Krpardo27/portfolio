@@ -1,57 +1,53 @@
-"use client"; 
-
+"use client";
 
 import ContactForm from "@/features/contact/components/ContactForm";
 import Heading from "@/shared/components/ui/Heading";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   return (
-    <AnimatePresence>
+    <section className="mx-auto w-full max-w-6xl px-5 pb-20 pt-28 sm:px-8 md:pb-28 md:pt-32">
       <motion.div
-        initial={{ opacity: 0, y: 15 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mx-auto space-y-6 section-container"
+        transition={{ duration: 0.45, ease: "easeOut" }}
       >
-        <div className="space-y-4 text-center max-w-lg flex flex-col items-center justify-center mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
-            <Heading level={1} className="text-white mt-10">
-              Contáctame
-            </Heading>
-          </motion.div>
+        <header className="max-w-2xl">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="h-px w-8 bg-blue-500" />
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="text-sm text-zinc-500"
+            <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
+              Contacto
+            </span>
+          </div>
+
+          <Heading level={1}>Hablemos</Heading>
+
+          <p className="mt-6 max-w-xl text-base leading-7 text-slate-500 sm:text-lg">
+            ¿Tienes un proyecto en mente o necesitas ayuda con una aplicación
+            web? Puedes escribirme directamente o utilizar el formulario.
+          </p>
+
+          <a
+            href="mailto:kpardoveas@gmail.com"
+            className="mt-4 inline-block text-sm text-slate-400 underline decoration-slate-700 underline-offset-4 transition-colors hover:text-blue-400 hover:decoration-blue-400"
           >
-            ¡Trabajemos juntos! Si tienes un proyecto en mente, no dudes en contactarme. Estoy abierto a nuevas
-            oportunidades y colaboraciones. Puedes enviarme un correo electrónico
-            a{" "}
-            <a
-              href="mailto:kpardoveas@gmail.com"
-              className="text-blue-500 underline"
-            >
-              kpardoveas@gmail.com
-            </a>
-            .
-          </motion.p>
+            kpardoveas@gmail.com
+          </a>
+        </header>
+
+        <div className="mt-16 border-t border-white/10 pt-12 md:mt-20 md:pt-16">
+          <div className="max-w-2xl">
+            <h2 className="text-sm font-medium uppercase tracking-[0.16em] text-slate-500">
+              Envíame un mensaje
+            </h2>
+
+            <div className="mt-6">
+              <ContactForm />
+            </div>
+          </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.4 }}
-        >
-          <ContactForm />
-        </motion.div>
       </motion.div>
-    </AnimatePresence>
+    </section>
   );
 }

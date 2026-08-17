@@ -3,45 +3,53 @@ import Heading from "@/shared/components/ui/Heading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Acerca de mi",
+  title: "Acerca de mí",
   description:
-    "Conoce a Kevin Pardo, Frontend Developer enfocado en React, JavaScript, interfaces accesibles, rendimiento web y desarrollo de experiencias digitales modernas.",
+    "Conoce a Kevin Pardo, Frontend Developer enfocado en React, JavaScript, accesibilidad, rendimiento web y desarrollo de interfaces digitales.",
   keywords: [
     "Kevin Pardo",
-    "acerca de Kevin Pardo",
     "Frontend Developer React",
     "desarrollador frontend Chile",
     "JavaScript",
     "Next.js",
-    "experiencia frontend",
+    "desarrollo frontend",
   ],
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "Acerca de mi | Kevin Pardo",
+    title: "Acerca de mí | Kevin Pardo",
     description:
-      "Conoce a Kevin Pardo, Frontend Developer enfocado en React, JavaScript, interfaces accesibles, rendimiento web y experiencias digitales modernas.",
+      "Conoce a Kevin Pardo, Frontend Developer enfocado en React, JavaScript, accesibilidad, rendimiento web y desarrollo de interfaces digitales.",
     url: "/about",
   },
 };
 
 export default function AboutPage() {
   return (
-    <section className="section-container py-24 w-full max-w-7xl flex flex-col items-center">
-      <header className="text-center mb-16 px-4">
-        <Heading level={1}>
-          Acerca <span className="text-blue-500">de mi</span>
-        </Heading>
-        <div className="w-16 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.5)]" />
-        <p className="text-slate-400 mt-6 max-w-xl mx-auto text-lg">
-          Frontend Developer enfocado en React y JavaScript, con experiencia
-          construyendo interfaces modernas, accesibles y orientadas a
-          mantenibilidad. Mi foco está en código limpio y experiencias digitales
-          bien pensadas.
+    <section className="mx-auto w-full max-w-6xl px-5 pb-20 pt-28 sm:px-8 md:pb-28 md:pt-32">
+      <header className="max-w-2xl">
+        <div className="mb-6 flex items-center gap-3">
+          <span className="h-px w-8 bg-blue-500" />
+
+          <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
+            Sobre mí
+          </span>
+        </div>
+
+        <Heading level={1}>Acerca de mí</Heading>
+
+        <p className="mt-6 max-w-xl text-base leading-7 text-slate-500 sm:text-lg">
+          Soy Frontend Developer y trabajo principalmente con React y
+          JavaScript. Me interesa construir interfaces claras, accesibles y
+          fáciles de mantener, cuidando tanto la experiencia de usuario como la
+          calidad del código.
         </p>
       </header>
-      <EducationTimeline />
+
+      <div className="mt-20 border-t border-white/10 pt-12 md:mt-24 md:pt-16">
+        <EducationTimeline />
+      </div>
     </section>
   );
 }
