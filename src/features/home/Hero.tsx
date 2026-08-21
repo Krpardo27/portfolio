@@ -72,8 +72,9 @@ export function Hero() {
             }}
             className="mt-6 max-w-xl text-base leading-7 text-slate-500 sm:text-lg"
           >
-            Desarrollo interfaces y aplicaciones web enfocadas en rendimiento,
-            experiencia de usuario y código mantenible.
+            Desarrollo interfaces y aplicaciones web con React y Next.js,
+            buscando un equilibrio entre una buena experiencia de usuario,
+            accesibilidad y código fácil de mantener.
           </motion.p>
 
           {/* Actions */}

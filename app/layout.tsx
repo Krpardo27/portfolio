@@ -1,7 +1,7 @@
-import { Header } from "@/shared/components/layout/Header";
+import { Header } from "@/shared/components/ui/Header";
 import "./globals.css";
-import { Footer } from "@/shared/components/layout/Footer";
-import { NavMobile } from "@/shared/components/layout/NavMobile";
+import { Footer } from "@/shared/components/ui/Footer";
+import { NavMobile } from "@/shared/components/ui/NavMobile";
 import ToastNotification from "@/shared/components/ui/ToastNotification";
 import type { Metadata } from "next";
 
