@@ -37,15 +37,7 @@ export default function ContactPage() {
         </header>
 
         <div className="mt-16 border-t border-white/10 pt-12 md:mt-20 md:pt-16">
-          <div className="max-w-2xl">
-            <h2 className="text-sm font-medium uppercase tracking-[0.16em] text-slate-500">
-              Envíame un mensaje
-            </h2>
-
-            <div className="mt-6">
-              <ContactForm />
-            </div>
-          </div>
+          <ContactForm />
         </div>
       </motion.div>
     </section>

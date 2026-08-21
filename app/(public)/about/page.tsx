@@ -5,11 +5,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Acerca de mí",
   description:
-    "Conoce a Kevin Pardo, Frontend Developer enfocado en React, JavaScript, accesibilidad, rendimiento web y desarrollo de interfaces digitales.",
+    "Conoce a Kevin Pardo, Frontend Developer especializado en React, JavaScript y desarrollo de interfaces web.",
   keywords: [
     "Kevin Pardo",
-    "Frontend Developer React",
-    "desarrollador frontend Chile",
+    "Frontend Developer",
+    "React",
     "JavaScript",
     "Next.js",
     "desarrollo frontend",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Acerca de mí | Kevin Pardo",
     description:
-      "Conoce a Kevin Pardo, Frontend Developer enfocado en React, JavaScript, accesibilidad, rendimiento web y desarrollo de interfaces digitales.",
+      "Conoce a Kevin Pardo, Frontend Developer especializado en React, JavaScript y desarrollo de interfaces web.",
     url: "/about",
   },
 };
@@ -40,10 +40,9 @@ export default function AboutPage() {
         <Heading level={1}>Acerca de mí</Heading>
 
         <p className="mt-6 max-w-xl text-base leading-7 text-slate-500 sm:text-lg">
-          Soy Frontend Developer y trabajo principalmente con React y
-          JavaScript. Me interesa construir interfaces claras, accesibles y
-          fáciles de mantener, cuidando tanto la experiencia de usuario como la
-          calidad del código.
+          Soy Frontend Developer y trabajo principalmente con React y Next.js. Me enfoco en construir interfaces claras,
+          accesibles y fáciles de mantener, cuidando tanto la experiencia de
+          usuario como la calidad del código.
         </p>
       </header>
 
