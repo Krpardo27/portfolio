@@ -2,6 +2,10 @@ import { ContactEmail } from "@/shared/emails/ContactEmail";
 import { rateLimit } from "@/shared/lib/rate-limit";
 import { getResend } from "@/shared/lib/resend";
 import { contactFormSchema } from "../schema";
+import { GENERIC_CONTACT_SEND_ERROR } from "../constants";
+
+const CONFIGURATION_ERROR =
+  "Falta la configuración del email. Revisa RESEND_API_KEY y EMAIL_FROM.";
 
 type ContactResult =
   | {
@@ -16,23 +20,10 @@ type ContactResult =
       status: 400 | 429 | 500;
     };
 
-const GENERIC_SEND_ERROR =
-  "No se pudo enviar el mensaje. Intenta nuevamente más tarde.";
-
 export async function sendContactEmail(
   data: unknown,
   identifier: string,
 ): Promise<ContactResult> {
-  const result = contactFormSchema.safeParse(data);
-
-  if (!result.success) {
-    return {
-      success: false,
-      errors: result.error.issues.map((issue) => ({ message: issue.message })),
-      status: 400,
-    };
-  }
-
   const limit = await rateLimit(identifier);
 
   if (!limit.success) {
@@ -43,16 +34,30 @@ export async function sendContactEmail(
     };
   }
 
+  const result = contactFormSchema.safeParse(data);
+
+  if (!result.success) {
+    return {
+      success: false,
+      errors: result.error.issues.map((issue) => ({ message: issue.message })),
+      status: 400,
+    };
+  }
+
   const { name, email, phone, message } = result.data;
 
   try {
     const from = process.env.EMAIL_FROM;
+    const apiKey = process.env.RESEND_API_KEY;
 
-    if (!from) {
-      console.error("Missing EMAIL_FROM");
+    if (!from || !apiKey) {
+      console.error("Missing email config", {
+        hasEmailFrom: Boolean(from),
+        hasResendApiKey: Boolean(apiKey),
+      });
       return {
         success: false,
-        errors: [{ message: GENERIC_SEND_ERROR }],
+        errors: [{ message: CONFIGURATION_ERROR }],
         status: 500,
       };
     }
@@ -70,7 +75,7 @@ export async function sendContactEmail(
       console.error("Resend error:", error);
       return {
         success: false,
-        errors: [{ message: GENERIC_SEND_ERROR }],
+        errors: [{ message: GENERIC_CONTACT_SEND_ERROR }],
         status: 500,
       };
     }
@@ -82,10 +87,13 @@ export async function sendContactEmail(
       status: 200,
     };
   } catch (error) {
-    console.error("Contact form error:", error);
+    const message =
+      error instanceof Error ? error.message : "Error desconocido al enviar email";
+
+    console.error("Contact form error:", message);
     return {
       success: false,
-      errors: [{ message: GENERIC_SEND_ERROR }],
+      errors: [{ message: GENERIC_CONTACT_SEND_ERROR }],
       status: 500,
     };
   }

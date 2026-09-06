@@ -27,7 +27,7 @@ export function NavMobile() {
     <div className="fixed inset-x-0 bottom-0 z-50 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden">
       <nav
         aria-label="Navegación móvil"
-        className="mx-auto max-w-md border border-white/10 bg-[#0b1220]"
+        className="mx-auto max-w-md border border-white/10 bg-[#0b1220] rounded-2xl"
       >
         <div className="grid grid-cols-6">
           {navLinks.map((link) => {
