@@ -40,10 +40,14 @@ export default function AboutPage() {
         <Heading level={1}>Acerca de mí</Heading>
 
         <p className="mt-6 max-w-xl text-base leading-7 text-slate-500 sm:text-lg">
-          Soy Frontend Developer y trabajo principalmente con React y
-          JavaScript. Me interesa construir interfaces claras, accesibles y
-          fáciles de mantener, cuidando tanto la experiencia de usuario como la
-          calidad del código.
+          Soy Desarrollador Full Stack con experiencia principalmente en React,
+          Next.js, JavaScript y TypeScript. Me interesa construir aplicaciones
+          web modernas, accesibles y fáciles de mantener, combinando una buena
+          experiencia de usuario con código limpio, eficiente y escalable. Tengo
+          experiencia integrando APIs REST, trabajando con bases de datos y
+          desplegando aplicaciones en entornos cloud. Actualmente continúo
+          fortaleciendo mi formación en Ingeniería en Computación e
+          Informática.
         </p>
       </header>
 

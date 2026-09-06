@@ -10,6 +10,18 @@ export interface EducationItem {
 export const educationData: EducationItem[] = [
   {
     id: 1,
+    period: "2027 – En curso",
+    title: "Ingeniería en Computación e Informática",
+    institution: "Universidad Andrés Bello (UNAB)",
+    description: [
+      "Formación en ingeniería de software y desarrollo de sistemas",
+      "Profundización en programación, bases de datos y arquitectura de software",
+      "Formación orientada al desarrollo de soluciones tecnológicas",
+    ],
+    logoUrl: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1788727171/portfolio/logo_avhgla.png",
+  },
+  {
+    id: 2,
     period: "2024 – 2025",
     title: "Especialización en Desarrollo de Aplicaciones Frontend",
     institution: "Adalid",
@@ -22,7 +34,7 @@ export const educationData: EducationItem[] = [
       "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782711/portfolio/adalid_mkfj0y.png",
   },
   {
-    id: 2,
+    id: 3,
     period: "2023",
     title: "Certificación React.js",
     institution: "CoderHouse",
@@ -37,7 +49,7 @@ export const educationData: EducationItem[] = [
       "https://res.cloudinary.com/kpardo-cloud/image/upload/f_auto,q_auto/v1775782721/portfolio/coderhouse_f2dc79.png",
   },
   {
-    id: 3,
+    id: 4,
     period: "2022",
     title: "Certificación JavaScript",
     institution: "CoderHouse",
@@ -51,7 +63,7 @@ export const educationData: EducationItem[] = [
       "https://res.cloudinary.com/kpardo-cloud/image/upload/f_auto,q_auto/v1775782721/portfolio/coderhouse_f2dc79.png",
   },
   {
-    id: 4,
+    id: 5,
     period: "2019 – 2022",
     title: "Técnico en Programación y Análisis de Sistemas",
     institution: "Instituto Profesional AIEP",
