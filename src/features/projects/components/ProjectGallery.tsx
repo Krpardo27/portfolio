@@ -67,7 +67,7 @@ export default function ProjectGallery({ images }: Props) {
         <button
           type="button"
           onClick={() => setLightboxIndex(activeIndex)}
-          className="group flex flex-1 flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-950 text-left shadow-2xl shadow-black/25 transition hover:-translate-y-1 hover:border-blue-300/35"
+          className="group flex flex-1 cursor-pointer flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-950 text-left shadow-2xl shadow-black/25 transition hover:-translate-y-1 hover:border-blue-300/35"
         >
           <BrowserChrome label={toFakeUrl(activeImage.alt)} />
           <div className="relative aspect-16/10">
@@ -76,7 +76,7 @@ export default function ProjectGallery({ images }: Props) {
               alt={activeImage.alt}
               fill
               sizes="(min-width: 1024px) 62vw, 100vw"
-              className="object-cover transition duration-500 group-hover:scale-[1.02]"
+              className="object-cover transition duration-500 group-hover:scale-[1.02] "
             />
             <div className="absolute inset-0 bg-linear-to-t from-[#0b1220]/30 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
             <span className="absolute right-4 top-4 rounded-full border border-white/15 bg-black/35 px-3 py-1 text-xs font-medium text-white opacity-0 backdrop-blur-md transition group-hover:opacity-100">
@@ -112,7 +112,7 @@ export default function ProjectGallery({ images }: Props) {
                   key={image.src}
                   type="button"
                   onClick={() => setActiveIndex(i)}
-                  className={`group relative w-44 shrink-0 overflow-hidden rounded-xl border bg-slate-950 text-left transition lg:w-full ${
+                  className={`group relative cursor-pointer w-44 shrink-0 overflow-hidden rounded-xl border bg-slate-950 text-left transition lg:w-full ${
                     isActive
                       ? "border-blue-300/70 shadow-lg shadow-blue-950/25"
                       : "border-white/10 hover:border-blue-300/35"

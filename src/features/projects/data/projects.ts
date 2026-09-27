@@ -154,8 +154,8 @@ export async function getProjects(): Promise<Project[]> {
     },
     {
       id: "5",
-      slug: "el-abrazo",
-      title: "El Abrazo - Gestión Veterinaria",
+      slug: "veterinary-app",
+      title: "Gestión Veterinaria",
       description:
         "Aplicación web fullstack para clínicas veterinarias. Permite agendar citas online, registrar clientes y mascotas, administrar veterinarios y los servicios que realiza cada uno, y gestionar la agenda y reservas desde un panel administrativo protegido.",
       image:
@@ -219,8 +219,44 @@ export async function getProjects(): Promise<Project[]> {
       gallery: [
         {
           src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1790539647/portfolio/Captura_desde_2026-09-27_17-06-14_tcuf9h.png",
-          alt: "Vista principal de Luma Vet",
+          alt: "Vista principal de El abrazo Veterinaria",
         },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1790540916/portfolio/login_itrswq.jpg",
+          alt: "Vista de la página de login",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1790540058/portfolio/dashboard-vet_kmyrmp.jpg",
+          alt: "Vista del dashboard",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1790540424/portfolio/dashboard-reservas_bnqnjy.jpg",
+          alt: "Vista de la gestión de reservas",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1790540425/portfolio/dashboard-agenda_uekugo.jpg",
+          alt: "Vista de la agenda diaria",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1790540425/portfolio/dashboard-clientes_nzeh4u.jpg",
+          alt: "Vista de la gestión de clientes",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1790540425/portfolio/dashboard-profesionales_gjbgbb.jpg",
+          alt: "Vista de la gestión de veterinarios",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1790540425/portfolio/dashboard-servicios_bi6iuq.jpg",
+          alt: "Vista de la gestión de servicios",
+        },
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1790540785/portfolio/reservar-1_psa6h9.jpg",
+          alt: "Vista de la reserva de cita",
+        },
+        {
+          src: 'https://res.cloudinary.com/kpardo-cloud/image/upload/v1790540785/portfolio/reserva-resumen_ovmmxg.jpg',
+          alt: "Vista del resumen de la reserva",
+        }
       ],
 
       demo: "https://veterinary-app-amber.vercel.app/",
