@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Portfolio Kevin Pardo",
   title: {
-    default: "Kevin Pardo | Frontend Developer",
+    default: "Kevin Pardo | Full stack",
     template: "%s | Kevin Pardo",
   },
   description:
-    "Portfolio profesional de Kevin Pardo, Frontend Developer especializado en React, Next.js, JavaScript y experiencias web modernas.",
+    "Portfolio profesional de Kevin Pardo, Full stack especializado en React, Next.js, JavaScript y experiencias web modernas.",
   keywords: [
     "Kevin Pardo",
-    "Frontend Developer",
+    "Full stack",
     "React",
     "Next.js",
     "JavaScript",
@@ -47,15 +47,15 @@ export const metadata: Metadata = {
     locale: "es_CL",
     url: siteUrl,
     siteName: "Portfolio Kevin Pardo",
-    title: "Kevin Pardo | Frontend Developer",
+    title: "Kevin Pardo | Full stack",
     description:
-      "Portfolio profesional de Kevin Pardo, Frontend Developer especializado en React, Next.js, JavaScript y experiencias web modernas.",
+      "Portfolio profesional de Kevin Pardo, Full stack especializado en React, Next.js, JavaScript y experiencias web modernas.",
   },
   twitter: {
     card: "summary",
-    title: "Kevin Pardo | Frontend Developer",
+    title: "Kevin Pardo | Full stack",
     description:
-      "Portfolio profesional de Kevin Pardo, Frontend Developer especializado en React, Next.js, JavaScript y experiencias web modernas.",
+      "Portfolio profesional de Kevin Pardo, Full stack especializado en React, Next.js, JavaScript y experiencias web modernas.",
   },
   verification: {
     google: "KtKl5OY2v0mvHK87eXJxDyAlF0ffBMz2eEJi1G6akdo",

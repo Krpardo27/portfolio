@@ -5,10 +5,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Acerca de mí",
   description:
-    "Conoce a Kevin Pardo, Frontend Developer especializado en React, JavaScript y desarrollo de interfaces web.",
+    "Conoce a Kevin Pardo, Full stack especializado en React, JavaScript y desarrollo de interfaces web.",
   keywords: [
     "Kevin Pardo",
-    "Frontend Developer",
+    "Full stack",
     "React",
     "JavaScript",
     "Next.js",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Acerca de mí | Kevin Pardo",
     description:
-      "Conoce a Kevin Pardo, Frontend Developer especializado en React, JavaScript y desarrollo de interfaces web.",
+      "Conoce a Kevin Pardo, Full stack especializado en React, JavaScript y desarrollo de interfaces web.",
     url: "/about",
   },
 };

@@ -59,7 +59,7 @@ export function Hero() {
             }}
             className="mt-5 text-xl font-medium tracking-tight text-slate-300 sm:text-2xl"
           >
-            Frontend Developer
+            Full stack
             <span className="text-slate-600"> · </span>
             React & Next.js
           </motion.h2>
