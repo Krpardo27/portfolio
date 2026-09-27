@@ -152,6 +152,79 @@ export async function getProjects(): Promise<Project[]> {
 
       demo: "https://barber-app-multi-tenant.kevcodesdev.cl/",
     },
+    {
+      id: "5",
+      slug: "el-abrazo",
+      title: "El Abrazo - Gestión Veterinaria",
+      description:
+        "Aplicación web fullstack para clínicas veterinarias. Permite agendar citas online, registrar clientes y mascotas, administrar veterinarios y los servicios que realiza cada uno, y gestionar la agenda y reservas desde un panel administrativo protegido.",
+      image:
+        "https://res.cloudinary.com/kpardo-cloud/image/upload/v1790539647/portfolio/Captura_desde_2026-09-27_17-06-14_tcuf9h.png",
+      categories: ["fullstack"],
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Better Auth",
+        "Google OAuth",
+        "Tailwind CSS",
+        "Zod",
+        "Framer Motion",
+        "Vitest",
+      ],
+
+      features: [
+        "Reserva de citas online para clientes nuevos y existentes",
+        "Registro de clientes y múltiples mascotas por cliente",
+        "Agenda diaria y gestión de reservas",
+        "Gestión de veterinarios y asignación de servicios",
+        "Catálogo de servicios por categoría con páginas dinámicas",
+        "Ficha de cliente y mascota",
+        "Panel administrativo protegido",
+        "Autenticación con Google OAuth",
+        "Hero con carrusel animado",
+        "Responsive Design",
+      ],
+      architecture: [
+        "App Router",
+        "Server Components",
+        "Server Actions",
+        "Prisma ORM",
+        "Relaciones many-to-many (Veterinario ↔ Servicio)",
+        "Seed modular con datos de ejemplo",
+        "Validaciones con Zod",
+        "Autenticación con Better Auth",
+      ],
+
+      techStack: {
+        frontend: [
+          "Next.js 16",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "Framer Motion",
+          "Embla Carousel",
+          "React Icons",
+          "Zod",
+        ],
+        backend: ["Next.js Server Actions", "Prisma ORM", "Better Auth"],
+        database: ["PostgreSQL"],
+        auth: ["Better Auth", "Google OAuth"],
+        testing: ["Vitest"],
+        services: ["Vercel"],
+      },
+
+      gallery: [
+        {
+          src: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1790539647/portfolio/Captura_desde_2026-09-27_17-06-14_tcuf9h.png",
+          alt: "Vista principal de Luma Vet",
+        },
+      ],
+
+      demo: "https://veterinary-app-amber.vercel.app/",
+    },
   ];
 }
 
