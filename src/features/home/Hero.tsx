@@ -37,7 +37,7 @@ export function Hero() {
             </span>
 
             <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
-              Disponible para proyectos freelance
+              Disponible
             </span>
           </motion.div>
 
