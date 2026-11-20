@@ -6,6 +6,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+const projectTypeLabels: Record<string, string> = {
+  landings: "Proyecto landing",
+  frontend: "Proyecto frontend",
+  fullstack: "Proyecto fullstack",
+};
+
+function getProjectTypeLabel(categories?: string[]) {
+  const category = categories?.find((item) => item !== "all");
+
+  return category ? projectTypeLabels[category] ?? "Proyecto" : "Proyecto";
+}
+
 export async function generateStaticParams() {
   const projects = await getProjects();
 
@@ -52,7 +64,7 @@ export default async function ProjectPage({
         <header className="flex flex-col gap-6">
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
-              Proyecto fullstack
+              {getProjectTypeLabel(project.categories)}
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl">
               {project.title}

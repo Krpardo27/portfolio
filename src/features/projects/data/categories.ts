@@ -15,6 +15,11 @@ export const projectCategories = [
     slug: "landings",
   },
   {
+    id: "frontend",
+    label: "Frontend",
+    slug: "frontend",
+  },
+  {
     id: "fullstack",
     label: "Fullstack",
     slug: "fullstack",
