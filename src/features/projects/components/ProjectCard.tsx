@@ -13,6 +13,7 @@ type ProjectCardProps = {
 
 const categoryLabels: Record<string, string> = {
   landings: "Landing",
+  frontend: "Frontend",
   fullstack: "Fullstack",
 };
 

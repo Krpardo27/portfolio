@@ -225,6 +225,107 @@ export async function getProjects(): Promise<Project[]> {
 
       demo: "https://veterinary-app-amber.vercel.app/",
     },
+    {
+      id: "6",
+      slug: "home-estate",
+      title: "HomeEstate - Catálogo Inmobiliario",
+      description:
+        "Aplicación frontend en React para explorar propiedades en Chile. Permite buscar casas, departamentos, terrenos y oficinas mediante filtros avanzados, comparar resultados en vista de lista o mapa, revisar fichas de detalle y guardar propiedades favoritas en el navegador.",
+      image: "/projects/real-estate-app/search.png",
+      categories: ["frontend"],
+      tags: [
+        "Vite",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "React Router",
+        "React Hook Form",
+        "Zod",
+        "MapLibre",
+        "Vitest",
+        "Playwright",
+        "Vercel",
+      ],
+
+      features: [
+        "Catálogo demo con 600 propiedades distribuidas por ciudad y tipo",
+        "Filtros por región, comuna, tipo, precio, dormitorios, baños y superficie",
+        "Vista de resultados en lista y mapa interactivo",
+        "Fichas de propiedad con precio, ubicación y características principales",
+        "Guardado de favoritos persistente en el navegador",
+        "Navegación responsive con accesos rápidos en mobile",
+        "Rutas dinámicas para detalle de propiedades",
+        "Formularios validados para filtros y búsqueda",
+        "Auditorías de accesibilidad, Lighthouse y capturas automatizadas",
+        "Estados vacíos y mensajes orientados al usuario",
+      ],
+      architecture: [
+        "Vite",
+        "Componentes React reutilizables",
+        "React Router DOM",
+        "Estado local para favoritos",
+        "React Hook Form y Zod para validaciones",
+        "Filtros sincronizados con query params",
+        "MapLibre, React Map GL y Supercluster para mapa y agrupación de marcadores",
+        "Datos demo estructurados para catálogo inmobiliario",
+        "Pruebas unitarias, navegación y e2e con Vitest y Playwright",
+      ],
+
+      techStack: {
+        frontend: [
+          "Vite 7",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "React Router DOM",
+          "React Hook Form",
+          "Zod",
+          "Framer Motion",
+          "MapLibre",
+          "React Map GL",
+          "Supercluster",
+          "React Icons",
+          "Yet Another React Lightbox",
+        ],
+        testing: ["Vitest", "Playwright", "Axe", "Lighthouse"],
+        services: ["Vercel", "Sharp"],
+      },
+
+      gallery: [
+        {
+          src: "/projects/real-estate-app/home.png",
+          alt: "Vista principal con buscador inmobiliario",
+          width: 718,
+          height: 449,
+        },
+        {
+          src: "/projects/real-estate-app/search.png",
+          alt: "Catálogo de propiedades con filtros",
+          width: 718,
+          height: 449,
+        },
+        {
+          src: "/projects/real-estate-app/map.png",
+          alt: "Vista de propiedades en el mapa",
+          width: 718,
+          height: 449,
+        },
+        {
+          src: "/projects/real-estate-app/property-detail.png",
+          alt: "Detalle de propiedad inmobiliaria",
+          width: 718,
+          height: 449,
+        },
+        {
+          src: "/projects/real-estate-app/favorites.png",
+          alt: "Propiedades guardadas como favoritas",
+          width: 718,
+          height: 449,
+        },
+      ],
+
+      demo: "https://real-estate-app-tecd.vercel.app/",
+    },
   ];
 }
 
