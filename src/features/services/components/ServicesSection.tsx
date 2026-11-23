@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Heading from "@/shared/components/ui/Heading";
-import { SectionHeader } from "@/shared/components/ui/SectionHeader";
 import { FiArrowUpRight, FiCode, FiDatabase, FiLayers } from "react-icons/fi";
 import { serviceProcess, services } from "../data";
 import type { IconType } from "react-icons";
+import { SectionHeader } from "@/shared/components/ui/SectionHeader";
 
 const serviceIcons: Record<string, IconType> = {
   "landing-pages": FiLayers,
@@ -52,9 +52,11 @@ export function ServicesSection({
             eyebrow="Desarrollo web"
             title="Servicios"
             level={isCompact ? 2 : 1}
-            description={isCompact
-              ? "Desarrollo sitios y aplicaciones web adaptadas a las necesidades de cada proyecto."
-              : "Desde una landing page hasta una aplicación web completa. Desarrollo soluciones enfocadas en rendimiento, usabilidad y una buena experiencia de usuario."}
+            description={
+              isCompact
+                ? "Desarrollo sitios y aplicaciones web adaptadas a las necesidades de cada proyecto."
+                : "Desde una landing page hasta una aplicación web completa. Desarrollo soluciones enfocadas en rendimiento, usabilidad y una buena experiencia de usuario."
+            }
           />
         </motion.div>
       )}
@@ -175,7 +177,12 @@ export function ServicesSection({
         >
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             {/* Process intro */}
-            <SectionHeader level={2} eyebrow="Proceso" title="Una forma simple de trabajar." description="Mantengo el proceso claro desde el principio, con avances concretos y comunicación durante todo el desarrollo." />
+            <SectionHeader
+              level={2}
+              eyebrow="Proceso"
+              title="Una forma simple de trabajar."
+              description="Mantengo el proceso claro desde el principio, con avances concretos y comunicación durante todo el desarrollo."
+            />
 
             {/* Process steps */}
             <div className="divide-y divide-white/10 border-y border-white/10">
