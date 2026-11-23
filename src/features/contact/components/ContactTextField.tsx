@@ -19,7 +19,7 @@ type ContactTextFieldProps<TFormValues extends FieldValues> = {
 };
 
 const inputClassName =
-  "w-full rounded-xl border border-zinc-300 px-4 py-3 text-sm text-black outline-none transition focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200";
+  "w-full rounded-xl border border-zinc-300 px-4 py-3 text-base text-black outline-none transition focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200";
 
 export default function ContactTextField<TFormValues extends FieldValues>({
   id,

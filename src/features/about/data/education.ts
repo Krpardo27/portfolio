@@ -18,7 +18,7 @@ export const educationData: EducationItem[] = [
       "Profundización en programación, bases de datos y arquitectura de software",
       "Formación orientada al desarrollo de soluciones tecnológicas",
     ],
-    logoUrl: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1788727171/portfolio/logo_avhgla.png",
+    logoUrl: "/logos/unab.webp",
   },
   {
     id: 2,
@@ -30,8 +30,7 @@ export const educationData: EducationItem[] = [
       "Desarrollo de interfaces modernas con enfoque UX/UI",
       "Aplicación de buenas prácticas y patrones de diseño",
     ],
-    logoUrl:
-      "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775782711/portfolio/adalid_mkfj0y.png",
+    logoUrl: "/logos/adalid.webp",
   },
   {
     id: 3,
@@ -45,8 +44,7 @@ export const educationData: EducationItem[] = [
       "Consumo de APIs REST",
       "Gestión de estado con Context API",
     ],
-    logoUrl:
-      "https://res.cloudinary.com/kpardo-cloud/image/upload/f_auto,q_auto/v1775782721/portfolio/coderhouse_f2dc79.png",
+    logoUrl: "/logos/coderhouse.webp",
   },
   {
     id: 4,
@@ -59,8 +57,7 @@ export const educationData: EducationItem[] = [
       "Trabajo con JSON",
       "Buenas prácticas de JavaScript moderno",
     ],
-    logoUrl:
-      "https://res.cloudinary.com/kpardo-cloud/image/upload/f_auto,q_auto/v1775782721/portfolio/coderhouse_f2dc79.png",
+    logoUrl: "/logos/coderhouse.webp",
   },
   {
     id: 5,
@@ -73,7 +70,6 @@ export const educationData: EducationItem[] = [
       "Modelamiento de bases de datos",
       "Implementación de soluciones tecnológicas",
     ],
-    logoUrl:
-      "https://res.cloudinary.com/kpardo-cloud/image/upload/v1777497977/portfolio/logo_vjjzdh.png",
+    logoUrl: "/logos/aiep.webp",
   },
 ];

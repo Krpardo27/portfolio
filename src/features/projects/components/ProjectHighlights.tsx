@@ -1,4 +1,4 @@
-// ProjectHighlights.tsx
+import Heading from "@/shared/components/ui/Heading";
 type Props = {
   features?: string[];
   architecture?: string[];
@@ -25,7 +25,7 @@ function CheckIcon() {
 function FeaturesList({ items }: { items: string[] }) {
   return (
     <section className="rounded-2xl border border-white/10 bg-white/[0.035] p-6">
-      <h2 className="text-xl font-semibold text-white">Funcionalidades</h2>
+      <Heading level={2} size={3}>Funcionalidades</Heading>
       <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-300">
         {items.map((item) => (
           <li key={item} className="flex gap-3">
@@ -41,7 +41,7 @@ function FeaturesList({ items }: { items: string[] }) {
 function ArchitectureFlow({ items }: { items: string[] }) {
   return (
     <section className="rounded-2xl border border-white/10 bg-white/[0.035] p-6">
-      <h2 className="text-xl font-semibold text-white">Arquitectura</h2>
+      <Heading level={2} size={3}>Arquitectura</Heading>
       <ol className="relative mt-6 space-y-6 pl-2">
         <div
           aria-hidden

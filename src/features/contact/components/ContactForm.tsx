@@ -1,4 +1,5 @@
 "use client";
+import Heading from "@/shared/components/ui/Heading";
 
 import { toast } from "react-toastify";
 import { useTransition } from "react";
@@ -60,9 +61,9 @@ export default function ContactForm() {
   return (
     <div className="mx-auto w-full max-w-2xl">
       <div className="mb-6">
-        <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-zinc-500">
+        <Heading level={2} size={3}>
           Envíame un mensaje
-        </h2>
+        </Heading>
       </div>
 
       <form

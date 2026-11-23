@@ -1,4 +1,5 @@
 "use client";
+import Heading from "./Heading";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -82,9 +83,9 @@ export function Timeline({ data }: Props) {
 
                       <div>
                         {item.title && (
-                          <h2 className="text-lg font-medium tracking-tight text-white sm:text-xl">
+                          <Heading level={2} size={3}>
                             {item.title}
-                          </h2>
+                          </Heading>
                         )}
 
                         {item.subtitle && (

@@ -13,7 +13,7 @@ export const experienceData: ExperienceItem[] = [
   {
     id: "prisa-media",
     company: "Prisa Media Chile",
-    logo: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775788949/portfolio/prisamedia_komdfo.jpg",
+    logo: "/logos/prisamedia.webp",
     position: "Desarrollador Digital",
     period: "2024 - Presente",
     location: "Providencia, RM, Chile",
@@ -30,7 +30,7 @@ export const experienceData: ExperienceItem[] = [
   {
     id: "smart-device-heliboss",
     company: "Smart Device / Heliboss",
-    logo: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775788947/portfolio/heliboss_j5bjfw.jpg",
+    logo: "/logos/heliboss.webp",
     position: "Desarrollador Web",
     period: "2023 - 2024",
     location: "Providencia, RM, Chile",
@@ -44,7 +44,7 @@ export const experienceData: ExperienceItem[] = [
   {
     id: "fusion-agency",
     company: "Fusion Agency",
-    logo: "https://res.cloudinary.com/kpardo-cloud/image/upload/v1775788945/portfolio/fusion_si1kom.jpg",
+    logo: "/logos/fusion.webp",
     position: "Desarrollador Web Junior",
     period: "2021 - 2022",
     location: "Remoto",

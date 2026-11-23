@@ -1,0 +1,117 @@
+import type { Project } from "../types/project.types";
+
+export const barberApp: Project = {
+  id: "4",
+  slug: "barber-app",
+  title: "Gestión de Barberías",
+  caseStudy: {
+    title: "Dos clientes, un mismo horario",
+    problem:
+      "Si dos personas consultan la agenda antes de que alguna confirme, ambas pueden ver libre la misma hora. Ocultar el turno en la interfaz no resuelve esa coincidencia.",
+    decision:
+      "La disponibilidad se calcula para cada barbero y tiene en cuenta cuánto dura el servicio. La protección frente a dobles reservas se aplica al guardar mediante transacciones, no solo al mostrar los horarios.",
+    check:
+      "Criterio de aceptación: ante dos solicitudes simultáneas para el mismo barbero y la misma franja, solo una debe quedar confirmada. Otro barbero con disponibilidad debe poder recibir una cita a esa hora.",
+  },
+  description:
+    "Aplicación web fullstack para la gestión integral de barberías. Permite reservas online, administración de clientes, agenda por barbero, catálogo de servicios, panel administrativo y cálculo inteligente de disponibilidad según la duración de cada servicio.",
+  image: "/projects/barber-app/portada.webp",
+  categories: ["fullstack"],
+  tags: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Prisma",
+    "PostgreSQL",
+    "Better Auth",
+    "Google OAuth",
+    "Tailwind CSS",
+    "React Hook Form",
+    "Zod",
+    "Vitest",
+  ],
+  features: [
+    "Reservas online con disponibilidad en tiempo real",
+    "Agenda diaria por barbero",
+    "Panel administrativo protegido",
+    "Gestión de clientes",
+    "Gestión de servicios y categorías",
+    "Duración personalizada por servicio y barbero",
+    "Prevención de doble reserva mediante transacciones",
+    "Autenticación con Google OAuth",
+    "Dashboard con métricas",
+    "Responsive Design",
+  ],
+  architecture: [
+    "App Router",
+    "Server Components",
+    "Server Actions",
+    "Prisma ORM",
+    "Relaciones many-to-many",
+    "Transacciones SQL",
+    "Validaciones con Zod",
+    "Autenticación con Better Auth",
+  ],
+  techStack: {
+    frontend: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "React Hook Form",
+      "Framer Motion",
+      "React Icons",
+      "Zod",
+    ],
+    backend: ["Next.js Server Actions", "Prisma ORM", "Better Auth"],
+    database: ["PostgreSQL"],
+    auth: ["Better Auth", "Google OAuth"],
+    testing: ["Vitest"],
+    services: ["Vercel"],
+  },
+  gallery: [
+    {
+      src: "/projects/barber-app/portada.webp",
+      alt: "Vista principal",
+      width: 1892,
+      height: 907,
+    },
+    {
+      src: "/projects/barber-app/dashboard.webp",
+      alt: "Vista del dashboard",
+      width: 1601,
+      height: 903,
+    },
+    {
+      src: "/projects/barber-app/agenda.webp",
+      alt: "Vista de la agenda diaria",
+      width: 1329,
+      height: 907,
+    },
+    {
+      src: "/projects/barber-app/clientes.webp",
+      alt: "Vista de la gestión de clientes",
+      width: 1306,
+      height: 903,
+    },
+    {
+      src: "/projects/barber-app/barberos.webp",
+      alt: "Vista de la gestión de barberos",
+      width: 1302,
+      height: 906,
+    },
+    {
+      src: "/projects/barber-app/editar.webp",
+      alt: "Vista de la edición de clientes",
+      width: 1459,
+      height: 905,
+    },
+    {
+      src: "/projects/barber-app/confirm.webp",
+      alt: "Vista de la confirmación",
+      width: 594,
+      height: 833,
+    },
+  ],
+  demo: "https://barber-app-multi-tenant.kevcodesdev.cl/",
+};

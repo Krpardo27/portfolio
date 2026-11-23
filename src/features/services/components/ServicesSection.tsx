@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Heading from "@/shared/components/ui/Heading";
+import { SectionHeader } from "@/shared/components/ui/SectionHeader";
 import { FiArrowUpRight, FiCode, FiDatabase, FiLayers } from "react-icons/fi";
 import { serviceProcess, services } from "../data";
 import type { IconType } from "react-icons";
@@ -39,25 +41,22 @@ export function ServicesSection({
     >
       {/* Header */}
       {showIntro && (
-        <motion.header
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16 max-w-3xl"
         >
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-8 bg-blue-500" />
-
-            <h2 className="font-bold uppercase tracking-[0.2em]">Servicios</h2>
-          </div>
-
-          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
-            {isCompact
+          <SectionHeader
+            eyebrow="Desarrollo web"
+            title="Servicios"
+            level={isCompact ? 2 : 1}
+            description={isCompact
               ? "Desarrollo sitios y aplicaciones web adaptadas a las necesidades de cada proyecto."
               : "Desde una landing page hasta una aplicación web completa. Desarrollo soluciones enfocadas en rendimiento, usabilidad y una buena experiencia de usuario."}
-          </p>
-        </motion.header>
+          />
+        </motion.div>
       )}
 
       {/* Services */}
@@ -82,7 +81,7 @@ export function ServicesSection({
               <div className="relative grid gap-8 py-8 md:grid-cols-[80px_1fr_auto] md:items-center md:gap-10 md:py-10">
                 {/* Number */}
                 <span className="font-mono text-sm text-slate-600 transition-colors duration-300 group-hover:text-blue-500">
-                  {number}
+                  {number} hola
                 </span>
 
                 {/* Main content */}
@@ -92,9 +91,9 @@ export function ServicesSection({
                       <Icon size={24} strokeWidth={1.5} />
                     </div>
 
-                    <h2 className="text-xl font-medium tracking-tight text-white sm:text-2xl">
+                    <Heading level={isCompact ? 3 : 2} size={3}>
                       {service.title}
-                    </h2>
+                    </Heading>
                   </div>
 
                   <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base">
@@ -176,24 +175,7 @@ export function ServicesSection({
         >
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             {/* Process intro */}
-            <div>
-              <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-6 bg-blue-500" />
-
-                <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-600">
-                  Proceso
-                </span>
-              </div>
-
-              <h3 className="text-2xl font-medium tracking-tight text-white sm:text-3xl">
-                Una forma simple de trabajar.
-              </h3>
-
-              <p className="mt-4 max-w-md text-sm leading-6 text-slate-500">
-                Mantengo el proceso claro desde el principio, con avances
-                concretos y comunicación durante todo el desarrollo.
-              </p>
-            </div>
+            <SectionHeader level={2} eyebrow="Proceso" title="Una forma simple de trabajar." description="Mantengo el proceso claro desde el principio, con avances concretos y comunicación durante todo el desarrollo." />
 
             {/* Process steps */}
             <div className="divide-y divide-white/10 border-y border-white/10">

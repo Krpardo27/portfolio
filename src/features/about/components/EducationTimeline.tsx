@@ -1,5 +1,5 @@
 import { Timeline } from "@/shared/components/ui/Timeline";
-import { educationData } from "../data";
+import { educationData } from "../data/education";
 
 export function EducationTimeline() {
   return (
