@@ -22,7 +22,7 @@ export default function PhoneField({
       </label>
 
       <div className="relative">
-        <div className="absolute top-[13px] left-0 pl-3 text-gray-500 text-sm font-semibold pointer-events-none">
+        <div className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-sm font-semibold text-gray-500">
           {CONTACT_PHONE_PREFIX}
         </div>
         <input
@@ -36,7 +36,7 @@ export default function PhoneField({
               shouldValidate: true,
             });
           }}
-          className="w-full pl-13 pr-4 py-3 rounded-xl border border-zinc-300 bg-white text-black text-sm outline-none transition focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200"
+          className="w-full pl-13 pr-4 py-3 rounded-xl border border-zinc-300 bg-white text-black text-base outline-none transition focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200"
         />
       </div>
 

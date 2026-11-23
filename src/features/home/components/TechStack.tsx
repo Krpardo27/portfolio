@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Heading from "@/shared/components/ui/Heading";
+import { SectionHeader } from "@/shared/components/ui/SectionHeader";
 import { stackByCategory, type StackItem } from "../data/stack";
 
 function StackIcon({ icon, iconSrc, name }: StackItem) {
@@ -10,7 +11,9 @@ function StackIcon({ icon, iconSrc, name }: StackItem) {
     return (
       <Image
         src={iconSrc}
-        alt=""
+        alt={`Logotipo de ${name}`}
+        title={name}
+        aria-hidden="true"
         width={18}
         height={18}
         className="h-[18px] w-[18px] object-contain"
@@ -44,22 +47,7 @@ export function TechStack() {
         transition={{ duration: 0.5 }}
       >
         {/* Header */}
-        <header className="mb-12 max-w-3xl">
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-8 bg-blue-500" />
-
-            <h2 className="font-bold uppercase tracking-[0.2em]">
-              Stack
-            </h2>
-          </div>
-
-          <Heading level={2}>Tecnologías con las que trabajo.</Heading>
-
-          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-500">
-            Herramientas que utilizo habitualmente para desarrollar interfaces,
-            aplicaciones web, APIs y sistemas.
-          </p>
-        </header>
+        <SectionHeader className="mb-12" level={2} eyebrow="Stack" title="Tecnologías con las que trabajo." description="Herramientas que utilizo habitualmente para desarrollar interfaces, aplicaciones web, APIs y sistemas." />
 
         {/* Categories */}
         <div className="border-t border-white/10">
@@ -77,9 +65,9 @@ export function TechStack() {
             >
               {/* Category */}
               <div>
-                <h3 className="text-sm font-medium text-white">
+                <Heading level={3} size={4}>
                   {category.title}
-                </h3>
+                </Heading>
 
                 <span className="mt-1 block font-mono text-xs text-slate-600">
                   {String(category.items.length).padStart(2, "0")} tecnologías

@@ -5,6 +5,24 @@ import ProjectTechStack from "@/features/projects/components/ProjectTechStack";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { SectionHeader } from "@/shared/components/ui/SectionHeader";
+
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const project = await getProjectBySlug((await params).slug);
+  if (!project) notFound();
+
+  const { title, description, image } = project;
+  const url = `/projects/${project.slug}`;
+  const images = [{ url: image, alt: title }];
+  return {
+    title, description, alternates: { canonical: url },
+    openGraph: { type: "website", locale: "es_CL", siteName: "Portfolio Kevin Pardo", title, description, url, images },
+    twitter: { card: "summary_large_image", title, description, images },
+  };
+}
 
 const projectTypeLabels: Record<string, string> = {
   landings: "Proyecto landing",
@@ -26,11 +44,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
 
   const project = await getProjectBySlug(slug);
@@ -61,19 +75,8 @@ export default async function ProjectPage({
           </div>
         </div>
 
-        <header className="flex flex-col gap-6">
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
-              {getProjectTypeLabel(project.categories)}
-            </p>
-            <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl">
-              {project.title}
-            </h1>
-          </div>
-
-          <p className="text-base leading-8 text-slate-300 md:text-lg">
-            {project.description}
-          </p>
+        <div className="flex flex-col gap-6">
+          <SectionHeader level={1} eyebrow={getProjectTypeLabel(project.categories)} title={project.title} description={project.description} />
 
           <div className="flex flex-wrap gap-2">
             {project.tags?.map((tag) => (
@@ -86,6 +89,7 @@ export default async function ProjectPage({
             ))}
           </div>
 
+          <div className="flex flex-wrap items-center gap-5">
           {project.demo ? (
             <a
               href={project.demo}
@@ -96,8 +100,27 @@ export default async function ProjectPage({
               Ver demo
             </a>
           ) : null}
-        </header>
+          {project.repository && (
+            <a href={project.repository} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-blue-300 hover:underline">Ver código en GitHub</a>
+          )}
+          </div>
+          {project.demoNote && <p className="max-w-prose text-sm leading-6 text-slate-300">{project.demoNote}</p>}
+        </div>
       </div>
+
+      {project.caseStudy && (
+        <section aria-labelledby="case-title" className="mt-14 border-y border-white/10 py-8">
+          <SectionHeader level={2} titleId="case-title" eyebrow="Caso de estudio" title={project.caseStudy.title} className="[&_h2]:scroll-mt-24" />
+          <dl className="mt-6 grid gap-6 md:grid-cols-3">
+            {[["El problema", project.caseStudy.problem], ["La decisión", project.caseStudy.decision], ["Cómo comprobarlo", project.caseStudy.check]].map(([label, text]) => (
+              <div key={label}>
+                <dt className="font-semibold text-white">{label}</dt>
+                <dd className="mt-2 text-sm leading-6 text-slate-300">{text}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
 
       {project.gallery?.length ? <ProjectGallery images={project.gallery} /> : null}
 

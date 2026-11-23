@@ -1,7 +1,6 @@
 import type { IconType } from "react-icons";
 import { FiCode } from "react-icons/fi";
 import {
-  SiCloudinary,
   SiDocker,
   SiFramer,
   SiGit,
@@ -66,7 +65,6 @@ export const stackByCategory: StackCategory[] = [
       { name: "Git", icon: SiGit },
       { name: "GitHub", icon: SiGithub },
       { name: "Vercel", icon: SiVercel },
-      { name: "Cloudinary", icon: SiCloudinary },
     ],
   },
   {

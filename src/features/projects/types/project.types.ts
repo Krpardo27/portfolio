@@ -19,6 +19,11 @@ export type Project = {
   title: string;
   description: string;
   image: string;
+  thumbnail?: string;
+  featuredSummary?: string;
+  caseStudy?: { title: string; problem: string; decision: string; check: string };
+  demoNote?: string;
+  repository?: string;
   categories?: string[];
   tags?: string[];
   features?: string[];

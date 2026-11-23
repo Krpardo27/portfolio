@@ -4,8 +4,25 @@ import { Footer } from "@/shared/components/ui/Footer";
 import { NavMobile } from "@/shared/components/ui/NavMobile";
 import ToastNotification from "@/shared/components/ui/ToastNotification";
 import type { Metadata } from "next";
+import localFont from "next/font/local";
+
+const display = localFont({
+  src: "../node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2",
+  variable: "--type-display", weight: "200 800", display: "swap",
+});
+const body = localFont({
+  src: "../node_modules/@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2",
+  variable: "--type-body", weight: "200 900", display: "swap",
+});
 
 const siteUrl = "https://portfolio-kpardo.kevcodesdev.cl";
+const mono = localFont({
+  src: "../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2",
+  variable: "--type-mono",
+  weight: "400",
+  display: "swap",
+  preload: false,
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -68,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="flex flex-col min-h-dvh">
         <Header />
         <main

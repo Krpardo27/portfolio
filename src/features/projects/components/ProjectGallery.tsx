@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { SectionHeader } from "@/shared/components/ui/SectionHeader";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
@@ -52,12 +53,7 @@ export default function ProjectGallery({ images }: Props) {
   return (
     <section className="mt-14">
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-300">
-            Vista del producto
-          </p>
-          <h2 className="mt-2 text-2xl font-semibold text-white">Galería</h2>
-        </div>
+        <SectionHeader level={2} eyebrow="Vista del producto" title="Galería" />
         <p className="max-w-md text-sm leading-6 text-slate-400 sm:text-right">
           Capturas reales del flujo y pantallas principales del proyecto.
         </p>
@@ -76,10 +72,10 @@ export default function ProjectGallery({ images }: Props) {
               alt={activeImage.alt}
               fill
               sizes="(min-width: 1024px) 62vw, 100vw"
-              className="object-cover transition duration-500 group-hover:scale-[1.02] "
+              className="object-contain"
             />
             <div className="absolute inset-0 bg-linear-to-t from-[#0b1220]/30 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
-            <span className="absolute right-4 top-4 rounded-full border border-white/15 bg-black/35 px-3 py-1 text-xs font-medium text-white opacity-0 backdrop-blur-md transition group-hover:opacity-100">
+            <span className="absolute right-3 top-3 rounded-full border border-white/15 bg-slate-950/80 px-3 py-1 text-xs font-medium text-white transition [@media(hover:hover)]:opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100">
               Ampliar
             </span>
           </div>

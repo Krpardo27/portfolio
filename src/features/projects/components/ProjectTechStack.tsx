@@ -1,4 +1,6 @@
-// ProjectTechStack.tsx
+import type { CSSProperties } from "react";
+import Heading from "@/shared/components/ui/Heading";
+import { SectionHeader } from "@/shared/components/ui/SectionHeader";
 import { ProjectTechStack as ProjectTechStackType } from "../types/project.types";
 
 type Props = {
@@ -38,21 +40,14 @@ export default function ProjectTechStack({ techStack }: Props) {
   return (
     <section className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] shadow-xl shadow-black/15">
       <div className="border-b border-white/10 p-6 sm:flex sm:items-end sm:justify-between sm:gap-8">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-300">
-            Tecnologías usadas
-          </p>
-          <h2 className="mt-2 text-2xl font-semibold text-white">
-            Stack técnico
-          </h2>
-        </div>
+        <SectionHeader level={2} eyebrow="Tecnologías usadas" title="Stack técnico" />
         <p className="mt-3 max-w-md text-sm leading-6 text-slate-400 sm:mt-0 sm:text-right">
           Capas del proyecto ordenadas de arriba hacia abajo: desde la interfaz
           hasta la base de datos.
         </p>
       </div>
 
-      <div className="space-y-3 p-6">
+      <div className="space-y-3 p-3 sm:p-6">
         {entries.map(([group, items], index) => {
           // Cada capa se indenta un poco más que la anterior,
           // sugiriendo profundidad (de UI a infraestructura).
@@ -61,8 +56,8 @@ export default function ProjectTechStack({ techStack }: Props) {
           return (
             <div
               key={group}
-              className="relative rounded-xl border border-white/10 bg-slate-950/50 p-4 shadow-inner shadow-white/5 transition hover:border-blue-300/25"
-              style={{ marginLeft: `${indent}px` }}
+              className="relative rounded-xl border border-white/10 bg-slate-950/50 p-4 shadow-inner shadow-white/5 transition hover:border-blue-300/25 md:ml-(--layer-indent)"
+              style={{ "--layer-indent": `${indent}px` } as CSSProperties}
             >
               {index > 0 && (
                 <span
@@ -70,14 +65,14 @@ export default function ProjectTechStack({ techStack }: Props) {
                   className="absolute -top-3 left-4 h-3 w-px bg-white/15"
                 />
               )}
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                 <div className="flex items-center gap-2.5">
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-blue-300/20 bg-blue-500/10 text-[10px] font-semibold text-blue-100">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="whitespace-nowrap text-sm font-semibold text-white">
+                  <Heading level={3} size={5} className="whitespace-nowrap">
                     {techStackLabels[group] ?? group}
-                  </h3>
+                  </Heading>
                 </div>
 
                 <div className="flex flex-1 flex-wrap gap-2">

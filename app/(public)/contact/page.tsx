@@ -1,7 +1,7 @@
 "use client";
 
 import ContactForm from "@/features/contact/components/ContactForm";
-import Heading from "@/shared/components/ui/Heading";
+import { SectionHeader } from "@/shared/components/ui/SectionHeader";
 import { motion } from "framer-motion";
 
 export default function ContactPage() {
@@ -12,21 +12,7 @@ export default function ContactPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: "easeOut" }}
       >
-        <header className="max-w-2xl">
-          <div className="mb-6 flex items-center gap-3">
-            <span className="h-px w-8 bg-blue-500" />
-
-            <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
-              Contacto
-            </span>
-          </div>
-
-          <Heading level={1}>Hablemos</Heading>
-
-          <p className="mt-6 max-w-xl text-base leading-7 text-slate-500 sm:text-lg">
-            ¿Tienes un proyecto en mente o necesitas ayuda con una aplicación
-            web? Puedes escribirme directamente o utilizar el formulario.
-          </p>
+        <SectionHeader level={1} eyebrow="Contacto" title="Hablemos" description="¿Tienes un proyecto en mente o necesitas ayuda con una aplicación web? Puedes escribirme directamente o utilizar el formulario.">
 
           <a
             href="mailto:kpardoveas@gmail.com"
@@ -34,7 +20,7 @@ export default function ContactPage() {
           >
             kpardoveas@gmail.com
           </a>
-        </header>
+        </SectionHeader>
 
         <div className="mt-16 border-t border-white/10 pt-12 md:mt-20 md:pt-16">
           <ContactForm />

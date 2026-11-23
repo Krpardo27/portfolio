@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-5 pb-8 pt-24 sm:px-8 md:pt-32">
+    <section className="mx-auto w-full max-w-6xl px-5 pt-24 sm:px-8 md:pt-28">
       <div className="grid items-center gap-16 md:grid-cols-[1.1fr_0.9fr] md:gap-12 lg:gap-20">
         {/* Content */}
         <motion.div
@@ -52,7 +52,7 @@ export function Hero() {
           </motion.div>
 
           {/* Role */}
-          <motion.h2
+          <motion.p
             variants={{
               hidden: { opacity: 0, y: 16 },
               visible: { opacity: 1, y: 0 },
@@ -62,7 +62,7 @@ export function Hero() {
             Full stack
             <span className="text-slate-600"> · </span>
             React & Next.js
-          </motion.h2>
+          </motion.p>
 
           {/* Description */}
           <motion.p
@@ -70,7 +70,7 @@ export function Hero() {
               hidden: { opacity: 0, y: 16 },
               visible: { opacity: 1, y: 0 },
             }}
-            className="mt-6 max-w-xl text-base leading-7 text-slate-500 sm:text-lg"
+            className="mt-5 max-w-xl text-base leading-7 text-slate-300 sm:text-lg"
           >
             Desarrollo interfaces y aplicaciones web con React y Next.js,
             buscando un equilibrio entre una buena experiencia de usuario,
@@ -139,14 +139,15 @@ export function Hero() {
             />
 
             {/* Image */}
-            <div className="relative h-[320px] w-[280px] overflow-hidden bg-slate-900 sm:h-[380px] sm:w-[330px] lg:h-[440px] lg:w-[380px]">
+            <div className="relative h-64 w-56 overflow-hidden bg-slate-900 lg:h-72 lg:w-64">
               <Image
-                src="https://res.cloudinary.com/kpardo-cloud/image/upload/v1775785552/portfolio/perfil_flmc7z.jpg"
-                alt="Kevin Pardo"
+                src="/perfil/perfil.webp"
+                alt="Retrato de Kevin Pardo"
+                title="Kevin Pardo, desarrollador full stack"
                 fill
                 priority
                 className="object-cover grayscale-[15%] transition-all duration-500 hover:grayscale-0"
-                sizes="(max-width: 1024px) 330px, 380px"
+                sizes="(min-width: 1024px) 256px, 224px"
               />
             </div>
 
@@ -167,7 +168,7 @@ export function Hero() {
           delay: 0.5,
           ease: "easeOut",
         }}
-        className="mt-24 origin-left border-t border-white/10"
+        className="mt-10 origin-left border-t border-white/10 md:mt-14"
       />
     </section>
   );

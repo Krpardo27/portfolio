@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import Heading from "@/shared/components/ui/Heading";
 import { FiArrowUpRight } from "react-icons/fi";
 import type { Project } from "../types/project.types";
 
@@ -20,7 +21,7 @@ const categoryLabels: Record<string, string> = {
 function getProjectType(project: Project) {
   const category = project.categories?.find((item) => item !== "all");
 
-  return category ? categoryLabels[category] ?? category : "Proyecto";
+  return category ? (categoryLabels[category] ?? category) : "Proyecto";
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
@@ -36,34 +37,30 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           delay: index * 0.06,
           ease: [0.22, 1, 0.36, 1],
         }}
-        whileHover={{ y: -3 }}
-        className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] shadow-xl shadow-black/20 backdrop-blur transition duration-300 group-hover:border-blue-400/35 group-hover:bg-white/5.5 group-hover:shadow-blue-950/25"
+        className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#141a28] shadow-xl shadow-black/20 transition-colors duration-300 group-hover:border-blue-400/35"
       >
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-linear-to-r from-transparent via-blue-300/60 to-transparent opacity-0 transition group-hover:opacity-100" />
-
         <div className="relative aspect-16/10 overflow-hidden bg-slate-950">
           <Image
-            src={project.image}
+            src={project.thumbnail ?? project.image}
             alt={project.title}
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             priority={index === 0}
-            className="object-cover transition duration-700 group-hover:scale-105"
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#0b1220] via-[#0b1220]/25 to-transparent" />
           <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/45 px-3 py-1 text-xs font-medium text-white backdrop-blur-md">
             {getProjectType(project)}
           </div>
-          <div className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white backdrop-blur-md transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-blue-500">
+          <div className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-slate-950/75 text-white transition-colors group-hover:bg-blue-600">
             <FiArrowUpRight size={18} />
           </div>
         </div>
 
         <div className="flex grow flex-col gap-4 p-5">
           <div>
-            <h3 className="text-xl font-semibold leading-tight text-white transition group-hover:text-blue-300">
+            <Heading level={2} size={3} className="leading-tight transition group-hover:text-blue-300">
               {project.title}
-            </h3>
+            </Heading>
 
             <p className="mt-3 overflow-hidden text-sm leading-6 text-slate-400 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:5]">
               {project.description}
